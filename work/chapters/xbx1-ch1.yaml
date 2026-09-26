@@ -1,0 +1,60 @@
+# 选必1 第一章 人体的内环境与稳态 —— 知识库唯一真相源
+chapter_id: xbx1-ch1
+subject: 生物
+book: 人教版《生物学 选择性必修1 稳态与调节》（2019）
+book_short: bio-xbx1
+chapter_no: 1
+chapter_title: 人体的内环境与稳态
+canon_file: references/nodes/biology.md
+canon_chapter: 选择性必修1 第一章 人体的内环境与稳态
+graph_doc: references/pep-bio-xbx1-ch1.md
+entry_question: 先学哪个节点：内环境的组成、内环境的理化性质，还是内环境的稳态？
+
+sections:
+  - title: 细胞生活的环境
+    nodes:
+      - id: kp_internal_environment
+        display: 内环境的组成
+        aliases: [内环境, 血浆, 组织液, 淋巴, 体液, 细胞外液]
+        type: concept
+        l1: 能说明血浆、组织液和淋巴等细胞外液共同构成高等动物细胞赖以生存的内环境
+        l2: 能阐明机体细胞生活在内环境中，通过内环境与外界环境进行物质交换，同时也参与内环境的形成和维持
+        l3: 待补录：延伸不在本节点展开
+        example: 自编物质交换路径题：外界食物→消化吸收→血浆→组织液→组织细胞；代谢废物经组织液回到血浆，由泌尿系统排出
+        pitfall: 内环境就是细胞外液（血浆、组织液和淋巴）——细胞内液不属于内环境
+        confusion: 血浆、组织液和淋巴的成分相近但蛋白质含量不同——血浆中蛋白质含量较高
+        source: {textbook: "P1-5", curriculum: "1.1.1、1.1.2"}
+  - title: 内环境的稳态
+    nodes:
+      - id: kp_internal_env_properties
+        display: 内环境的理化性质
+        aliases: [渗透压, 酸碱度, 温度]
+        type: concept
+        l1: 能举例说出内环境的渗透压、酸碱度（血浆 pH 约 7.35~7.45）和温度（37℃ 左右）保持相对稳定
+        l2: 能说明渗透压、酸碱度和温度偏离正常范围可能带来的危害，理解其维持在正常范围的意义
+        l3: 待补录：延伸不在本节点展开
+        example: 自编分析题：血浆 pH 保持在 7.35~7.45——低于或高于该范围会分别引起酸中毒或碱中毒
+        pitfall: 渗透压的大小取决于单位体积溶液中溶质微粒的数目——微粒数目越多渗透压越高，与微粒种类无关
+        confusion: 血浆中的缓冲物质（如碳酸和碳酸氢钠）参与维持 pH 的稳定——喝酸性饮料不会让血液 pH 大幅下降
+        source: {textbook: "P6-9", curriculum: "1.2.1"}
+      - id: kp_homeostasis
+        display: 内环境的稳态
+        aliases: [稳态, 调节网络]
+        type: concept
+        l1: 能概述正常机体通过调节作用，使各个器官、系统协调活动，共同维持内环境的相对稳定状态
+        l2: 能阐明神经—体液—免疫调节网络是机体维持稳态的主要调节机制，并说明内环境稳态是机体进行正常生命活动的必要条件
+        l3: 待补录：延伸不在本节点展开
+        example: 自编波动分析：发烧时体温升高、剧烈运动后乳酸进入血液——内环境成分随之波动，经调节又回到正常范围，说明稳态是相对稳定而非固定不变
+        pitfall: 稳态是相对稳定、动态平衡，不是恒定不变——各项指标总在一定范围内波动
+        confusion: 内环境稳态遭破坏时，细胞代谢会紊乱——稳态是细胞正常生命活动的必要条件
+        source: {textbook: "P6-13", curriculum: "1.2.1、1.2.2"}
+
+edges:
+  - [kp_internal_environment, kp_internal_env_properties, 同章衔接]
+  - [kp_internal_env_properties, kp_homeostasis, 同章衔接]
+
+combo:
+  - [kp_internal_env_properties, kp_osmosis, 常考组合]
+
+later:
+  - {id: xbx1_ch2, display: 第二章 神经调节}

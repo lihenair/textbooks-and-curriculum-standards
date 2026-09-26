@@ -1,0 +1,103 @@
+# 选必1 第二章 神经调节 —— 知识库唯一真相源
+chapter_id: xbx1-ch2
+subject: 生物
+book: 人教版《生物学 选择性必修1 稳态与调节》（2019）
+book_short: bio-xbx1
+chapter_no: 2
+chapter_title: 神经调节
+canon_file: references/nodes/biology.md
+canon_chapter: 选择性必修1 第二章 神经调节
+graph_doc: references/pep-bio-xbx1-ch2.md
+entry_question: 先学哪个节点：神经调节的结构基础、反射与反射弧，还是神经冲动的传导？
+
+sections:
+  - title: 神经调节的结构基础
+    nodes:
+      - id: kp_neuron_structure
+        display: 神经调节的结构基础
+        aliases: [神经元, 中枢神经系统, 自主神经]
+        type: concept
+        l1: 能说出神经系统由神经元和神经胶质细胞组成，神经元是神经系统结构与功能的基本单位
+        l2: 能说明中枢神经系统包括脑和脊髓，自主神经系统由交感神经和副交感神经两部分组成、作用于内脏器官
+        l3: 待补录：延伸不在本节点展开
+        example: 自编对比：交感神经使心跳加快，副交感神经使心跳减慢——两者对同一内脏器官的作用相反
+        pitfall: 神经元是神经系统结构与功能的基本单位——神经胶质细胞对神经元起辅助作用，不要混为一谈
+        confusion: 中枢神经系统包括脑和脊髓——不要把“位于中枢部位”与“属于中枢神经系统”混为一谈
+        source: {textbook: "P14-20", curriculum: 1.3.5}
+  - title: 神经调节的基本方式
+    nodes:
+      - id: kp_reflex_arc
+        display: 神经调节的基本方式
+        aliases: [反射, 反射弧, 条件反射, 非条件反射]
+        type: concept
+        l1: 能概述神经调节的基本方式是反射（可分为条件反射和非条件反射），其结构基础是反射弧
+        l2: 能完整说出反射弧的五个组成部分——感受器、传入神经、神经中枢、传出神经、效应器，并分析反射的完成过程
+        l3: 待补录：延伸不在本节点展开
+        example: 自编缩手反射弧排序题：感受器→传入神经→脊髓（神经中枢）→传出神经→效应器（肌肉收缩）
+        pitfall: 反射弧必须完整，反射才能发生——缺少任何一环反射都不能完成
+        confusion: 条件反射需要大脑皮层参与、后天学习形成；非条件反射生来就有、中枢在脊髓等低级部位
+        source: {textbook: "P21-25", curriculum: 1.3.1}
+  - title: 神经冲动的产生和传导
+    nodes:
+      - id: kp_nerve_impulse
+        display: 神经冲动的产生和传导
+        aliases: [静息电位, 动作电位, 神经冲动]
+        type: concept
+        l1: 能阐明神经细胞膜内外在静息状态具有电位差（外正内负），受到外界刺激后形成动作电位（外负内正）
+        l2: 能说明动作电位沿神经纤维传导形成神经冲动
+        l3: 待补录：延伸不在本节点展开
+        example: 自编电位读图题：静息电位是“外正内负”，动作电位是“外负内正”——两种状态的区别要记准
+        pitfall: 静息电位和动作电位的膜内外电位方向正好相反——答题时先写明膜外、膜内再作答
+        confusion: 兴奋以电信号（神经冲动）的形式沿神经纤维传导——电信号不是电流本身
+        source: {textbook: "P26-29", curriculum: 1.3.2}
+      - id: kp_synapse
+        display: 神经冲动在突触处的传递
+        aliases: [突触, 神经递质]
+        type: concept
+        l1: 能阐明神经冲动在突触处的传递通常通过化学传递方式完成——突触前膜释放神经递质，经突触间隙作用于突触后膜
+        l2: 能说明神经递质与突触后膜上的受体结合引发后膜电位变化，兴奋在突触处的传递是单向的
+        l3: 待补录：延伸不在本节点展开
+        example: 自编单向性题：刺激突触后神经元，不能逆向引起突触前神经元兴奋——这就是突触传递的单向性
+        pitfall: 神经递质存在于突触小泡中，由突触前膜释放到突触间隙，与突触后膜上的受体结合
+        confusion: 兴奋在神经纤维上以电信号形式传导，在突触处借助化学物质（神经递质）传递——两种信号形式别混
+        source: {textbook: "P26-29", curriculum: 1.3.3}
+  - title: 神经系统的分级调节
+    nodes:
+      - id: kp_hierarchical_regulation
+        display: 神经系统的分级调节
+        aliases: [脊髓]
+        type: concept
+        l1: 能分析位于脊髓的低级神经中枢和脑中相应的高级神经中枢相互联系、相互协调，共同调控器官和系统的活动
+        l2: 能举例说明中枢神经系统通过自主神经来调节内脏的活动，维持机体的稳态
+        l3: 待补录：延伸不在本节点展开
+        example: 自编情境题：成人能有意识地控制排尿——脊髓的低级神经中枢受大脑皮层相应高级中枢的调控
+        pitfall: 脊髓中的低级神经中枢受脑中相应高级中枢的调控——“脊髓负责的反射不受脑控制”的说法是错的
+        confusion: 自主神经分为交感神经和副交感神经，对同一内脏器官的作用往往相反，共同维持内脏活动的协调
+        source: {textbook: "P30-33", curriculum: "1.3.4、1.3.5"}
+  - title: 人脑的高级功能
+    nodes:
+      - id: kp_brain_functions
+        display: 人脑的高级功能
+        aliases: [语言功能, 学习和记忆]
+        type: concept
+        l1: 能简述语言活动和条件反射是由大脑皮层控制的高级神经活动
+        l2: 能举例说出人脑特有的语言功能（听、说、读、写）以及学习和记忆等功能
+        l3: 待补录：延伸不在本节点展开
+        example: 自编辨析题：人类能对语言文字发生反应形成条件反射——这是人类特有的、与语言中枢有关的高级神经活动
+        pitfall: 语言功能是人类特有的高级神经活动——大脑皮层言语区受损伤会导致特定的语言功能障碍
+        confusion: 学习和记忆不是由单一脑区独立完成的——短时记忆可能与神经元的活动及神经联系有关，长时记忆可能与新突触的建立有关
+        source: {textbook: "P34-37", curriculum: 1.3.6}
+
+edges:
+  - [kp_neuron_structure, kp_reflex_arc, 同章衔接]
+  - [kp_reflex_arc, kp_nerve_impulse, 同章衔接]
+  - [kp_nerve_impulse, kp_synapse, 同章衔接]
+  - [kp_synapse, kp_hierarchical_regulation, 同章衔接]
+  - [kp_hierarchical_regulation, kp_brain_functions, 同章衔接]
+
+combo:
+  - [kp_reflex_arc, kp_hierarchical_regulation, 常考组合]
+  - [kp_brain_functions, kp_homeostasis, 常考组合]
+
+later:
+  - {id: xbx1_ch3, display: 第三章 体液调节}
