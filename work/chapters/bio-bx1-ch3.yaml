@@ -1,0 +1,125 @@
+# 必修1 第三章 细胞的基本结构 —— 知识库唯一真相源
+chapter_id: bio-bx1-ch3
+subject: 生物
+book: 人教版《生物学 必修1 分子与细胞》（2019）
+book_short: bio-bx1
+chapter_no: 3
+chapter_title: 细胞的基本结构
+canon_file: references/nodes/biology.md
+canon_chapter: 必修1 第三章 细胞的基本结构
+graph_doc: references/pep-bio-bx1-ch3.md
+entry_question: 先学哪个节点：细胞膜的功能、细胞器的分工，还是细胞核？
+
+sections:
+  - title: 细胞膜的结构和功能
+    nodes:
+      - id: kp_cell_membrane_functions
+        display: 细胞膜的功能
+        aliases: [细胞膜]
+        type: concept
+        l1: 能概述细胞膜的三大功能：将细胞与外界环境分隔开、控制物质进出细胞、进行细胞间的信息交流
+        l2: 能结合实例说明各功能——台盼蓝鉴别死活细胞体现控制物质进出，胰岛素随血液与靶细胞膜上受体结合体现信息交流
+        l3: 待补录：延伸不在本节点展开
+        example: 自编判读：台盼蓝染液中死细胞被染成蓝色、活细胞不着色——说明活细胞的细胞膜能控制物质进出
+        pitfall: 细胞膜控制物质进出是相对的——细胞需要的营养物质容易进入，但病菌等有害物质也可能进入
+        confusion: 三大功能别混：分隔开是“边界”、控制进出是“关卡”、信息交流是“通信”；激素随血液作用于靶细胞属于信息交流
+        source: {textbook: P40-42, curriculum: 1.2.1}
+      - id: kp_fluid_mosaic
+        display: 流动镶嵌模型
+        aliases: [磷脂双分子层, 糖蛋白, 糖被]
+        type: concept
+        l1: 能说出流动镶嵌模型的基本内容——磷脂双分子层构成膜的基本支架，蛋白质分子有的镶在表面、有的部分或全部嵌入、有的贯穿整个双分子层
+        l2: 能说明细胞膜具有流动性（磷脂分子可以侧向自由移动，膜中的蛋白质大多也能运动），并根据糖蛋白的位置判断膜的内外侧
+        l3: 待补录：延伸不在本节点展开
+        example: 自编读图题：图3-5 中糖蛋白（糖被）位于磷脂双分子层的一侧——有糖蛋白的一侧是细胞膜外侧
+        pitfall: 磷脂双分子层内部是疏水端，水溶性分子或离子不能自由通过，因此细胞膜有屏障作用
+        confusion: “流动”指磷脂分子可以侧向自由移动、膜中的蛋白质大多也能运动——不要说成所有蛋白质都能自由运动
+        source: {textbook: "P43-45 含图3-5", curriculum: 1.2.1}
+  - title: 细胞器的结构和功能
+    nodes:
+      - id: kp_differential_centrifugation
+        display: 差速离心法
+        aliases: [差速离心]
+        type: skill
+        l1: 能说出差速离心是采取逐渐提高离心速率分离不同大小颗粒的方法
+        l2: 能说明研究细胞内各种细胞器时，常用差速离心法将它们分离开再分别研究
+        l3: 待补录：延伸不在本节点展开
+        example: 自编情境：要单独研究某一种细胞器，需先用差速离心法把各种细胞器分开，再对目标细胞器进行研究
+        pitfall: 差速离心的关键是“逐渐提高”离心速率——不同转速分步分离不同大小的颗粒
+        confusion: 差速离心法用来分离细胞器，与后面研究分泌蛋白用的同位素标记法目的不同，别混
+        source: {textbook: P48}
+      - id: kp_cell_wall
+        display: 细胞壁
+        aliases: [植物细胞壁]
+        type: concept
+        l1: 能说出植物细胞壁位于细胞膜的外面，主要由纤维素和果胶构成
+        l2: 能说明细胞壁对植物细胞起支持与保护作用
+        l3: 待补录：延伸不在本节点展开
+        example: 自编问答：植物细胞最外层是细胞壁而不是细胞膜，其主要成分是纤维素和果胶
+        pitfall: 细胞壁的主要成分是纤维素和果胶，不是蛋白质——成分与“支持保护”的功能要答全
+        confusion: 有细胞壁的是植物细胞，动物细胞没有细胞壁——别把细胞壁当成所有细胞都有
+        source: {textbook: P48}
+      - id: kp_organelles
+        display: 细胞器的结构和功能
+        aliases: [细胞器, 核糖体, 内质网, 高尔基体, 溶酶体, 液泡]
+        type: concept
+        l1: 能列举线粒体、叶绿体、内质网、核糖体、高尔基体、溶酶体、液泡等主要细胞器及其功能
+        l2: 能阐明细胞内多个相对独立的结构分工担负物质运输、合成与分解、能量转换和信息传递等生命活动
+        l3: 待补录：延伸不在本节点展开
+        example: 自编对应题：线粒体——细胞的“动力车间”（所需能量约 95% 来自它）；叶绿体——“养料制造车间”和“能量转换站”；核糖体——“生产蛋白质的机器”；溶酶体——“消化车间”
+        pitfall: 溶酶体内含多种水解酶，能分解衰老、损伤的细胞器，吞噬并杀死侵入细胞的病毒或细菌
+        confusion: 分布辨析：叶绿体是绿色植物能进行光合作用的细胞特有的细胞器；中心体分布在动物与低等植物细胞中；液泡主要存在于植物细胞中
+        source: {textbook: P48-51, curriculum: 1.2.2}
+      - id: kp_secretory_protein
+        display: 分泌蛋白的合成和运输
+        aliases: [分泌蛋白]
+        type: concept
+        l1: 能举例说出分泌蛋白（如消化酶、抗体和一部分激素）在核糖体上合成、经内质网和高尔基体加工、通过细胞膜分泌到细胞外
+        l2: 能用同位素标记法的研究思路，说明分泌蛋白合成与运输过程中各细胞器的协调配合
+        l3: 待补录：延伸不在本节点展开
+        example: 自编路径排序题：核糖体（合成肽链）→ 内质网（加工、运输）→ 高尔基体（加工、分类和包装）→ 通过细胞膜分泌到细胞外
+        pitfall: 内质网是蛋白质等大分子物质的合成、加工场所和运输通道；高尔基体是对来自内质网的蛋白质进行加工、分类和包装的“车间”及“发送站”
+        confusion: 研究分泌蛋白用的是同位素标记法（追踪氨基酸去向），与分离细胞器的差速离心法目的不同，别混
+        source: {textbook: P52-53, curriculum: 1.2.4}
+      - id: kp_biomembrane_system
+        display: 生物膜系统
+        aliases: [生物膜]
+        type: concept
+        l1: 能说出细胞的生物膜系统由细胞膜、核膜和细胞器膜等结构共同构成
+        l2: 能说明这些生物膜的组成成分和结构很相似，广阔的膜面积为多种酶提供了附着位点，并把各种细胞器分隔开使化学反应而不会互相干扰
+        l3: 待补录：延伸不在本节点展开
+        example: 自编归类题：细胞膜、核膜、内质网膜、高尔基体膜都属于生物膜系统——别把它答成只有细胞膜
+        pitfall: 生物膜系统不只有细胞膜——核膜与细胞器膜都在其中
+        confusion: 生物膜把各种细胞器分隔开如同一个个小的区室，使细胞内能够同时进行多种化学反应而不会互相干扰——这是区室化的意义
+        source: {textbook: P53-54, curriculum: 1.2.4}
+  - title: 细胞核的结构和功能
+    nodes:
+      - id: kp_nucleus
+        display: 细胞核
+        aliases: [核膜, 核仁, 染色质, 核孔]
+        type: concept
+        l1: 能说出细胞核的结构——核膜（双层膜，把核内物质与细胞质分开）、染色质（主要由 DNA 和蛋白质组成，DNA 是遗传信息的载体）、核仁（与某种 RNA 的合成以及核糖体的形成有关）、核孔（实现核质之间频繁的物质交换和信息交流）
+        l2: 能阐明遗传信息主要储存在细胞核中——细胞核是遗传信息库，是细胞代谢和遗传的控制中心
+        l3: 待补录：延伸不在本节点展开
+        example: 自编结构对应题：核膜——双层膜；核仁——与核糖体形成有关；核孔——物质交换和信息交流的通道；染色质——DNA 的载体
+        pitfall: “遗传信息库”答细胞核，“遗传信息的载体”答 DNA——两个问法的答案不同
+        confusion: 原核细胞没有以核膜为界限的细胞核，只有拟核——别把拟核当成真核细胞的细胞核（呼应第一章）
+        source: {textbook: P51-54, curriculum: 1.2.3}
+
+edges:
+  - [kp_cell_membrane_functions, kp_fluid_mosaic, 同章衔接]
+  - [kp_fluid_mosaic, kp_differential_centrifugation, 同章衔接]
+  - [kp_differential_centrifugation, kp_cell_wall, 同章衔接]
+  - [kp_cell_wall, kp_organelles, 同章衔接]
+  - [kp_organelles, kp_secretory_protein, 同章衔接]
+  - [kp_secretory_protein, kp_biomembrane_system, 同章衔接]
+  - [kp_biomembrane_system, kp_nucleus, 同章衔接]
+
+combo:
+  - [kp_fluid_mosaic, bx1_ch4, 常考组合]
+  - [kp_organelles, kp_proteins, 常考组合]
+  - [kp_nucleus, kp_nucleic_acids, 常考组合]
+
+later:
+  - {id: bx1_ch4, display: 第四章 细胞的物质输入和输出}
+  - {id: bx1_ch5, display: 第五章 细胞的能量供应和利用}
