@@ -1,0 +1,89 @@
+# 必修2 第六章 生物的进化 —— 知识库唯一真相源
+chapter_id: bio-bx2-ch6
+subject: 生物
+book: 人教版《生物学 必修2 遗传与进化》（2019）
+book_short: bio-bx2
+chapter_no: 6
+chapter_title: 生物的进化
+canon_file: references/nodes/biology.md
+canon_chapter: 必修2 第六章 生物的进化
+graph_doc: references/pep-bio-bx2-ch6.md
+entry_question: 先学哪个节点：共同祖先的证据、自然选择与适应，还是生物多样性的形成？
+
+sections:
+  - title: 生物有共同祖先的证据
+    nodes:
+      - id: kp_common_ancestor
+        display: 生物有共同祖先的证据
+        aliases: [化石, 共同祖先]
+        type: concept
+        l1: 能尝试通过化石记录、比较解剖学和胚胎学等事实，说明当今生物具有共同的祖先
+        l2: 能尝试通过细胞生物学和分子生物学等知识，说明当今生物在新陈代谢、DNA 的结构与功能等方面具有许多共同特征
+        l3: 待补录：延伸不在本节点展开
+        example: 自编证据分类题：化石记录、比较解剖学、胚胎学属于共同祖先的证据；细胞与分子生物学说明共同特征
+        pitfall: 化石是研究生物进化最直接、最重要的证据——利用放射性同位素可以确定化石的年代
+        confusion: 当今生物来自共同祖先，但各种生物在形态上差异巨大——共同特征要从细胞和分子层面去找
+        source: {textbook: "P100-105", curriculum: "4.1.1、4.1.2"}
+  - title: 自然选择与适应的形成
+    nodes:
+      - id: kp_natural_selection_adaptation
+        display: 自然选择与适应的形成
+        aliases: [自然选择, 适应]
+        type: concept
+        l1: 能举例说明种群内的某些可遗传变异将赋予个体在特定环境中的生存和繁殖优势，具有优势性状的个体在种群中所占比例将会增加
+        l2: 能说明自然选择促进生物更好地适应特定的生存环境，并概述现代生物进化理论以自然选择学说为核心
+        l3: 待补录：延伸不在本节点展开
+        example: 自编情境：某种蛾的体色在污染地区深色个体占优势、繁殖机会更多——可遗传变异 + 环境选择使优势性状比例增加
+        pitfall: 自然选择直接作用的是生物的个体（表现型），进化的实质是种群基因频率的改变——作用对象和实质要分开表述
+        confusion: 达尔文的自然选择学说能科学解释生物的适应和进化，但受当时科学水平限制，对遗传的本质解释不足
+        source: {textbook: "P106-109", curriculum: "4.2.1、4.2.2、4.2.3、4.2.4"}
+  - title: 种群基因组成的变化与物种的形成
+    nodes:
+      - id: kp_population_gene_frequency
+        display: 种群基因组成的变化
+        aliases: [种群, 基因库, 基因频率]
+        type: concept
+        l1: 能说出生活在一定区域的同种生物全部个体的集合叫作种群，一个种群全部个体所含有的全部基因叫作这个种群的基因库
+        l2: 能说明种群是生物进化的基本单位，进化的实质是种群基因频率的改变
+        l3: 待补录：延伸不在本节点展开
+        example: 自编计算情境：某昆虫种群中某基因的频率为 10%，若该基因频率发生定向变化，则说明种群发生了进化
+        pitfall: 研究进化要落到“种群”层面——个体谈不上进化，个体只是基因频率变化的载体
+        confusion: 基因库是一个种群全部个体所含全部基因的总和——不是某一个体的全部基因
+        source: {textbook: "P110-113", curriculum: "4.2.4"}
+      - id: kp_speciation
+        display: 物种的形成
+        aliases: [物种, 隔离]
+        type: concept
+        l1: 能说出物种是能够在自然状态下相互交配并产生可育后代的一群生物，隔离是物种形成的必要条件
+        l2: 能阐述变异、选择和隔离可导致新物种的形成
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：马和驴虽然能够交配，但产生的后代（骡）不可育——马和驴之间存在生殖隔离，属于不同物种
+        pitfall: 生殖隔离是物种形成的标志——不同物种之间不能相互交配，或交配后不能产生可育后代
+        confusion: 隔离包括地理隔离和生殖隔离——地理隔离积累到产生生殖隔离，才标志着新物种的形成
+        source: {textbook: "P114-117", curriculum: 4.2.5}
+  - title: 协同进化与生物多样性的形成
+    nodes:
+      - id: kp_coevolution_biodiversity
+        display: 协同进化与生物多样性的形成
+        aliases: [协同进化, 生物多样性]
+        type: concept
+        l1: 能举例说出不同物种之间、生物与无机环境之间在相互影响中不断进化和发展，这就是协同进化
+        l2: 能说明协同进化形成了生物的多样性——基因多样性、物种多样性和生态系统多样性
+        l3: 待补录：延伸不在本节点展开
+        example: 自编教材实例：某种兰花与专门给它传粉的蛾相互适应、共同进化——一方变化推动另一方变化
+        pitfall: 生物多样性包括基因多样性、物种多样性和生态系统多样性三个层次——答“多样性”时三个层次都要想到
+        confusion: 协同进化是不同物种之间、生物与无机环境之间的相互影响和共同发展——不是单个物种孤立地进化
+        source: {textbook: "P110、P118-127", curriculum: "概念4"}
+
+edges:
+  - [kp_common_ancestor, kp_natural_selection_adaptation, 同章衔接]
+  - [kp_natural_selection_adaptation, kp_population_gene_frequency, 同章衔接]
+  - [kp_population_gene_frequency, kp_speciation, 同章衔接]
+  - [kp_speciation, kp_coevolution_biodiversity, 同章衔接]
+
+combo:
+  - [kp_natural_selection_adaptation, kp_gene_mutation, 常考组合]
+  - [kp_population_gene_frequency, kp_mendel_methods, 常考组合]
+
+later:
+  - {id: bio_xbx1, display: 选择性必修1《稳态与调节》}
