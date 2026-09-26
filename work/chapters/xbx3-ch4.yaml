@@ -1,0 +1,61 @@
+# 选必3 第四章 生物技术的安全性与伦理问题 —— 知识库唯一真相源
+chapter_id: xbx3-ch4
+subject: 生物
+book: 人教版《生物学 选择性必修3 生物技术与工程》（2019）
+book_short: bio-xbx3
+chapter_no: 4
+chapter_title: 生物技术的安全性与伦理问题
+canon_file: references/nodes/biology.md
+canon_chapter: 选择性必修3 第四章 生物技术的安全性与伦理问题
+graph_doc: references/pep-bio-xbx3-ch4.md
+entry_question: 先学哪个节点：转基因产品的安全性、关注生殖性克隆人，还是禁止生物武器？
+
+sections:
+  - title: 转基因产品的安全性
+    nodes:
+      - id: kp_gmo_safety
+        display: 转基因产品的安全性
+        aliases: [转基因产品]
+        type: concept
+        l1: 能举例说出日常生活中的转基因产品
+        l2: 能探讨转基因技术在应用过程中带来的影响，客观陈述支持与质疑两方面的观点
+        l3: 待补录：延伸不在本节点展开
+        example: 自编讨论题：转基因食品是否安全——教材设置了辩论活动，支持方与质疑方的依据都要了解
+        pitfall: 转基因技术的应用需要遵守国家相关法规并进行严格的安全评价
+        confusion: 转基因产品与普通产品外观可能相同——判断依据是成分检测等科学手段，而不是外观
+        source: {textbook: "P101-105", curriculum: "6.1.1、6.1.2"}
+  - title: 关注生殖性克隆人
+    nodes:
+      - id: kp_cloning_ethics
+        display: 关注生殖性克隆人
+        aliases: [克隆人, 生殖性克隆]
+        type: concept
+        l1: 能举例说出生殖性克隆人面临的伦理问题
+        l2: 能分析说明我国“不赞成、不允许、不支持、不接受”任何生殖性克隆人实验的立场
+        l3: 待补录：延伸不在本节点展开
+        example: 自编辨析题：治疗性克隆（获得用于治疗的细胞）与生殖性克隆（培育克隆人个体）目的不同——我国禁止生殖性克隆人
+        pitfall: 中国政府的“四不”立场：不赞成、不允许、不支持、不接受任何生殖性克隆人实验
+        confusion: 治疗性克隆与生殖性克隆的目的不同——前者为了获得治疗用的细胞，后者为了复制个体
+        source: {textbook: "P106-109", curriculum: "6.2.1、6.2.2"}
+  - title: 禁止生物武器
+    nodes:
+      - id: kp_biological_weapons
+        display: 禁止生物武器
+        aliases: [生物武器]
+        type: concept
+        l1: 能举例说明历史上生物武器对人类造成了严重的威胁与伤害
+        l2: 认同我国反对生物武器及其技术和设备扩散的立场
+        l3: 待补录：延伸不在本节点展开
+        example: 教材史实自编题：历史上曾有人利用致病菌作为生物武器发动战争——造成严重的伤亡和恐慌
+        pitfall: 生物武器包括致病菌、病毒、生化毒剂以及经过基因改造的致病菌等——其研究、生产和扩散被国际公约禁止
+        confusion: 生物武器的危害具有传染性和持续性——与常规武器不同，影响可能长期存在
+        source: {textbook: "P111-117", curriculum: "6.3.1、6.3.2"}
+
+edges:
+  - [kp_gmo_safety, kp_cloning_ethics, 同章衔接]
+  - [kp_cloning_ethics, kp_biological_weapons, 同章衔接]
+
+combo:
+  - [kp_gmo_safety, kp_gene_engineering_applications, 常考组合]
+
+later: []

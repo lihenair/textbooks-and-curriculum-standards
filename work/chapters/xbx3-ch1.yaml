@@ -1,0 +1,76 @@
+# 选必3 第一章 发酵工程 —— 知识库唯一真相源
+chapter_id: xbx3-ch1
+subject: 生物
+book: 人教版《生物学 选择性必修3 生物技术与工程》（2019）
+book_short: bio-xbx3
+chapter_no: 1
+chapter_title: 发酵工程
+canon_file: references/nodes/biology.md
+canon_chapter: 选择性必修3 第一章 发酵工程
+graph_doc: references/pep-bio-xbx3-ch1.md
+entry_question: 先学哪个节点：传统发酵技术、微生物的培养技术，还是发酵工程及其应用？
+
+sections:
+  - title: 传统发酵技术的应用
+    nodes:
+      - id: kp_traditional_fermentation
+        display: 传统发酵技术的应用
+        aliases: [果酒, 果醋, 泡菜, 酵母菌, 乳酸菌, 醋酸菌]
+        type: concept
+        l1: 能举例说明日常生活中的某些食品（如果酒、果醋、泡菜、腐乳）是运用传统发酵技术生产的
+        l2: 能说明果酒（酵母菌）、果醋（醋酸菌）、泡菜（乳酸菌）制作所利用的微生物及发酵条件
+        l3: 待补录：延伸不在本节点展开
+        example: 自编对比题：葡萄酒用酵母菌无氧发酵，葡萄醋用醋酸菌有氧发酵，泡菜用乳酸菌无氧发酵——菌种与条件不同
+        pitfall: 果酒发酵需要无氧环境（酵母菌无氧呼吸产生酒精），果醋制作需要持续通入氧气（醋酸菌是好氧菌）
+        confusion: 传统发酵技术利用的是天然菌种（如附着在葡萄皮表面的野生酵母菌），不需要人工接种纯化菌种
+        source: {textbook: "P1-8", curriculum: 3.2.1}
+  - title: 微生物的培养技术及应用
+    nodes:
+      - id: kp_microbe_culture
+        display: 微生物的培养技术
+        aliases: [灭菌, 消毒, 培养基]
+        type: concept
+        l1: 能阐明灭菌是获得纯净微生物培养物的前提，并能区分灭菌与消毒
+        l2: 能举例说明通过调整培养基的配方可有目的地培养某种微生物（如选择培养基）
+        l3: 待补录：延伸不在本节点展开
+        example: 自编方法归类题：培养基用高压蒸汽灭菌；接种环用火焰灼烧灭菌；操作台面用紫外线或化学药剂消毒
+        pitfall: 灭菌是杀灭物体内外所有微生物（包括芽孢和孢子）；消毒是杀灭物体表面或内部的部分微生物——程度不同
+        confusion: 培养基一般用高压蒸汽灭菌法，金属接种用具用灼烧灭菌——不同对象用不同的灭菌方法
+        source: {textbook: "P9-21", curriculum: "3.1.1、3.1.2、3.1.3"}
+  - title: 微生物的分离、纯化和计数
+    nodes:
+      - id: kp_microbe_isolation
+        display: 微生物的分离、纯化和计数
+        aliases: [平板划线法, 稀释涂布平板法, 显微镜计数法]
+        type: concept
+        l1: 能概述平板划线法和稀释涂布平板法是实验室中进行微生物分离和纯化的常用方法
+        l2: 能概述稀释涂布平板法和显微镜计数法是测定微生物数量的常用方法
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：通过平板上菌落的形状、大小、颜色等特征可以初步区分不同种类的微生物
+        pitfall: 平板划线法通过划线将聚集的菌种逐步稀释分散——最后一次划线得到的单个菌落就是纯化的菌种
+        confusion: 稀释涂布平板法既能分离纯化菌种又能用于计数；平板划线法一般只用于分离纯化、不能计数
+        source: {textbook: "P15-21", curriculum: "3.1.4、3.1.5"}
+  - title: 发酵工程及其应用
+    nodes:
+      - id: kp_fermentation_engineering
+        display: 发酵工程及其应用
+        aliases: [发酵罐, 青霉素]
+        type: concept
+        l1: 能阐明发酵工程利用现代工程技术及微生物的特定功能，工业化生产人类所需产品
+        l2: 能举例说明发酵工程在医药（如青霉素）、食品及其他工农业生产上有重要的应用价值
+        l3: 待补录：延伸不在本节点展开
+        example: 教材实例自编题：青霉素是世界上第一种抗生素——通过发酵工程可以大规模生产
+        pitfall: 发酵工程的一般环节：菌种选育→扩大培养→配制培养基→灭菌→接种→发酵罐内发酵→产品的分离提纯
+        confusion: 发酵的中心环节是发酵罐内的发酵——需要严格控制温度、pH、溶解氧等条件
+        source: {textbook: "P22-30", curriculum: "3.2.2、3.2.3"}
+
+edges:
+  - [kp_traditional_fermentation, kp_microbe_culture, 同章衔接]
+  - [kp_microbe_culture, kp_microbe_isolation, 同章衔接]
+  - [kp_microbe_isolation, kp_fermentation_engineering, 同章衔接]
+
+combo:
+  - [kp_traditional_fermentation, kp_anaerobic_respiration, 常考组合]
+
+later:
+  - {id: xbx3_ch2, display: 第二章 细胞工程}

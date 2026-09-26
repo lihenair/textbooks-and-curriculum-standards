@@ -1,0 +1,77 @@
+# 选必3 第三章 基因工程 —— 知识库唯一真相源
+chapter_id: xbx3-ch3
+subject: 生物
+book: 人教版《生物学 选择性必修3 生物技术与工程》（2019）
+book_short: bio-xbx3
+chapter_no: 3
+chapter_title: 基因工程
+canon_file: references/nodes/biology.md
+canon_chapter: 选择性必修3 第三章 基因工程
+graph_doc: references/pep-bio-xbx3-ch3.md
+entry_question: 先学哪个节点：重组 DNA 技术的基本工具、基本操作程序，还是基因工程的应用？
+
+sections:
+  - title: 重组 DNA 技术的基本工具
+    nodes:
+      - id: kp_recombinant_dna_tools
+        display: 重组 DNA 技术的基本工具
+        aliases: [限制性内切核酸酶, DNA 连接酶, 载体]
+        type: concept
+        l1: 能阐明 DNA 重组技术的实现需要利用限制性内切核酸酶（“分子手术刀”）、DNA 连接酶（“缝合针”）和载体（“运输车”）三种基本工具
+        l2: 能说明常用载体是质粒——它应含有复制原点、标记基因和限制酶切割位点等
+        l3: 待补录：延伸不在本节点展开
+        example: 自编工具对应题：用同一种限制酶切割目的基因和载体产生相同的黏性末端，再用 DNA 连接酶连接
+        pitfall: 一种限制性内切核酸酶只能识别一种特定的核苷酸序列并在特定的位点切割——专一性很强
+        confusion: 质粒是最常用的载体但不是唯一的载体——λ 噬菌体衍生物、细菌人工染色体等也可以作为载体
+        source: {textbook: "P70-75", curriculum: 5.1.2}
+  - title: 基因工程的基本操作程序
+    nodes:
+      - id: kp_gene_engineering_procedure
+        display: 基因工程的基本操作程序
+        aliases: [目的基因, 基因表达载体]
+        type: concept
+        l1: 能阐明基因工程的基本操作程序主要包括：目的基因的获取→基因表达载体的构建→目的基因导入受体细胞→目的基因及其表达产物的检测与鉴定
+        l2: 能结合教材转基因抗虫棉的实例说明培育转基因生物的流程
+        l3: 待补录：延伸不在本节点展开
+        example: 自编流程排序题：获取抗虫基因→构建基因表达载体→导入棉花细胞→检测与鉴定出抗虫棉（教材实例）
+        pitfall: 基因表达载体的构建是基因工程的核心——载体上需要启动子、终止子、目的基因和标记基因
+        confusion: 把目的基因导入植物细胞常用农杆菌转化法（教材资料卡“农杆菌”）——导入微生物则常用 Ca²⁺ 处理法
+        source: {textbook: "P76-86", curriculum: 5.1.3}
+  - title: 基因工程的应用
+    nodes:
+      - id: kp_gene_engineering_applications
+        display: 基因工程的应用
+        aliases: [转基因生物]
+        type: concept
+        l1: 能举例说明基因工程在农牧业（如转基因抗虫棉）、医药（如人胰岛素）和食品等行业的应用
+        l2: 能说明基因工程在改善人类生活品质方面的价值
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：转基因抗虫棉能自己产生抵抗虫害的物质——减少了农药的使用，降低了对环境的污染
+        pitfall: 基因工程可以跨越物种的界限转移基因——这是它与传统育种方式的本质区别
+        confusion: 转基因生物的安全性问题需要评估和管理——但有严格安全评价的转基因产品是可以放心讨论其利弊的
+        source: {textbook: "P87-90", curriculum: 5.1.4}
+  - title: 蛋白质工程的原理和应用
+    nodes:
+      - id: kp_protein_engineering
+        display: 蛋白质工程的原理和应用
+        aliases: [蛋白质工程]
+        type: concept
+        l1: 能概述人们根据基因工程原理进行蛋白质设计和改造，可以获得性状和功能更符合人类需求的蛋白质
+        l2: 能举例说明依据人类需要对原有蛋白质结构进行基因改造、生产目标蛋白的过程
+        l3: 待补录：延伸不在本节点展开
+        example: 自编思路题：改造蛋白质通常从改造对应的基因入手——因为基因决定蛋白质的结构
+        pitfall: 蛋白质工程是基因工程的延伸——通过改造基因来改造蛋白质，而不是直接改造蛋白质
+        confusion: 蛋白质工程的目标是获得满足人类需求的蛋白质——天然蛋白质的结构和功能不一定完全符合人类需要
+        source: {textbook: "P93-95", curriculum: "5.2.1、5.2.2"}
+
+edges:
+  - [kp_recombinant_dna_tools, kp_gene_engineering_procedure, 同章衔接]
+  - [kp_gene_engineering_procedure, kp_gene_engineering_applications, 同章衔接]
+  - [kp_gene_engineering_applications, kp_protein_engineering, 同章衔接]
+
+combo:
+  - [kp_recombinant_dna_tools, kp_dna_structure, 常考组合]
+  - [kp_gene_engineering_procedure, kp_secretory_protein, 常考组合]
+
+later:
+  - {id: xbx3_ch4, display: 第四章 生物技术的安全性与伦理问题}

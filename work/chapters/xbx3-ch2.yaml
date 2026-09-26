@@ -1,0 +1,76 @@
+# 选必3 第二章 细胞工程 —— 知识库唯一真相源
+chapter_id: xbx3-ch2
+subject: 生物
+book: 人教版《生物学 选择性必修3 生物技术与工程》（2019）
+book_short: bio-xbx3
+chapter_no: 2
+chapter_title: 细胞工程
+canon_file: references/nodes/biology.md
+canon_chapter: 选择性必修3 第二章 细胞工程
+graph_doc: references/pep-bio-xbx3-ch2.md
+entry_question: 先学哪个节点：植物细胞工程、动物细胞工程，还是胚胎工程？
+
+sections:
+  - title: 植物细胞工程
+    nodes:
+      - id: kp_plant_cell_engineering
+        display: 植物细胞工程
+        aliases: [植物组织培养, 愈伤组织, 脱分化, 再分化, 体细胞杂交]
+        type: concept
+        l1: 能阐明植物组织培养是在一定条件下，将离体植物器官、组织和细胞诱导形成愈伤组织，并重新分化，最终形成完整植株的过程
+        l2: 能概述植物体细胞杂交技术，并举例说明植物细胞工程利用快速繁殖、脱毒、次生代谢产物生产、育种等方式提高了生产效率
+        l3: 待补录：延伸不在本节点展开
+        example: 自编流程题：离体植物组织→脱分化→愈伤组织→再分化→完整植株（植物组织培养流程）
+        pitfall: 植物组织培养的原理是植物细胞的全能性——已分化的细胞仍具有发育成完整个体的潜能（呼应必修1）
+        confusion: 植物体细胞杂交要先去除细胞壁获得原生质体，再人工诱导原生质体融合形成杂种细胞
+        source: {textbook: "P34-42", curriculum: "4.1.1、4.1.2、4.1.3"}
+  - title: 动物细胞工程
+    nodes:
+      - id: kp_animal_cell_engineering
+        display: 动物细胞工程
+        aliases: [动物细胞培养, 核移植, 细胞融合, 单克隆抗体]
+        type: concept
+        l1: 能阐明动物细胞培养是从动物体获得相关组织、分散成单个细胞后在适宜条件下让细胞生长和增殖的过程，它是动物细胞工程的基础
+        l2: 能概述动物细胞核移植（体细胞核移入去核卵母细胞）和动物细胞融合技术，并说明细胞融合技术是单克隆抗体制备的重要技术
+        l3: 待补录：延伸不在本节点展开
+        example: 自编流程题：单克隆抗体制备——B 淋巴细胞与骨髓瘤细胞融合形成杂交瘤细胞，既能产生抗体又能大量增殖
+        pitfall: 动物细胞核移植是将体细胞核移入一个去核的卵母细胞中，使重组细胞发育成新胚胎、继而发育成动物个体
+        confusion: 动物细胞培养的原理是细胞增殖；植物组织培养的原理才是细胞的全能性——两者原理不同
+        source: {textbook: "P43-55", curriculum: "4.2.1、4.2.2、4.2.3、4.2.4"}
+  - title: 干细胞的应用
+    nodes:
+      - id: kp_stem_cell_application
+        display: 干细胞的应用
+        aliases: []
+        type: concept
+        l1: 能简述干细胞在生物医学工程中有广泛的应用价值
+        l2: 能举例说出干细胞（如 iPS 细胞）在再生医学等领域的应用前景
+        l3: 待补录：延伸不在本节点展开
+        example: 教材实例自编题：iPS 细胞（诱导多能干细胞）可以分化成多种细胞——在再生医学研究中前景广阔
+        pitfall: 干细胞的应用前景广阔，但相关研究需要遵守伦理规范
+        confusion: iPS 细胞是诱导多能干细胞——由体细胞诱导获得，与胚胎干细胞来源不同
+        source: {textbook: "P47", curriculum: 4.2.5}
+  - title: 胚胎工程
+    nodes:
+      - id: kp_embryo_engineering
+        display: 胚胎工程
+        aliases: [胚胎移植, 体外受精, 胚胎分割]
+        type: concept
+        l1: 能简述胚胎的形成经历了受精及早期发育等过程
+        l2: 能简述胚胎工程包括体外受精、胚胎移植和胚胎分割等技术及其应用
+        l3: 待补录：延伸不在本节点展开
+        example: 自编流程题：体外受精→早期胚胎培养→胚胎移植到受体子宫——胚胎工程的核心技术组合
+        pitfall: 胚胎移植是胚胎工程的最后一道“工序”——供体提供胚胎、受体提供发育场所
+        confusion: 胚胎分割需要均等分割内细胞团——否则会影响分割后胚胎的恢复和进一步发育
+        source: {textbook: "P56-63", curriculum: "4.3.1、4.3.2"}
+
+edges:
+  - [kp_plant_cell_engineering, kp_animal_cell_engineering, 同章衔接]
+  - [kp_animal_cell_engineering, kp_stem_cell_application, 同章衔接]
+  - [kp_stem_cell_application, kp_embryo_engineering, 同章衔接]
+
+combo:
+  - [kp_plant_cell_engineering, kp_totipotency, 常考组合]
+
+later:
+  - {id: xbx3_ch3, display: 第三章 基因工程}
