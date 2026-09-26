@@ -350,6 +350,7 @@ def _write(artifacts: dict) -> None:
 def _init_db(artifacts: dict) -> int:
     script = artifacts["graph_script"]
     db = artifacts["graph_db"]
+    Path(db).unlink(missing_ok=True)
     completed = subprocess.run(
         [sys.executable, str(script), "init", "--db", str(db)],
         check=False,
