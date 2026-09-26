@@ -19,10 +19,14 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="抽出 PDF 正文并按章切开")
     parser.add_argument("pdf", type=Path)
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--render-pages", type=str, default=None,
+                        help="把指定 PDF 页渲染成 PNG 供图表核对（如 24-27,30）；只渲染不抽文本")
     args = parser.parse_args(argv)
     if not args.pdf.is_file():
         print(f"找不到 PDF：{args.pdf}", file=sys.stderr)
         return 2
+    if args.render_pages:
+        return render_pages(args.pdf, args.out, args.render_pages)
     try:
         pages = extract_pages(args.pdf)
     except RuntimeError as exc:
@@ -128,6 +132,37 @@ def write_extract(out: Path, pages: list[str]) -> None:
         safe = re.sub(r"[^\w\u4e00-\u9fff]+", "-", title).strip("-") or f"ch{number:02d}"
         (chapter_dir / f"{number:02d}-{safe}.txt").write_text("\n".join(lines).strip() + "\n", encoding="utf-8")
     (out / "toc.txt").write_text("\n".join(toc) + ("\n" if toc else ""), encoding="utf-8")
+
+
+
+def render_pages(pdf: Path, out: Path, spec: str) -> int:
+    """把 PDF 页渲染成 PNG，供人工和读图核对图表数据。页码是 PDF 页码。"""
+    try:
+        import fitz
+    except ImportError:
+        print("渲染需要 PyMuPDF：pip install pymupdf", file=sys.stderr)
+        return 2
+    wanted = []
+    for part in spec.split(","):
+        part = part.strip()
+        if "-" in part:
+            lo, hi = part.split("-", 1)
+            wanted.extend(range(int(lo), int(hi) + 1))
+        elif part:
+            wanted.append(int(part))
+    img_dir = Path(out) / "img"
+    img_dir.mkdir(parents=True, exist_ok=True)
+    document = fitz.open(pdf)
+    saved = 0
+    for n in wanted:
+        if not 1 <= n <= len(document):
+            print(f"跳过越界页 {n}", file=sys.stderr)
+            continue
+        pix = document[n - 1].get_pixmap(dpi=150)
+        pix.save(img_dir / f"p{n:03d}.png")
+        saved += 1
+    print(f"已渲染 {saved} 页到 {img_dir}")
+    return 0
 
 
 if __name__ == "__main__":

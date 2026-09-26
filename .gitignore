@@ -5,3 +5,4 @@ work/raw/**
 !work/raw/.gitkeep
 work/snippets/**
 !work/snippets/.gitkeep
+.DS_Store
