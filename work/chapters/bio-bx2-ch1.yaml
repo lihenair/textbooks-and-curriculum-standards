@@ -1,0 +1,85 @@
+# 必修2 第一章 遗传因子的发现 —— 知识库唯一真相源
+chapter_id: bio-bx2-ch1
+subject: 生物
+book: 人教版《生物学 必修2 遗传与进化》（2019）
+book_short: bio-bx2
+chapter_no: 1
+chapter_title: 遗传因子的发现
+canon_file: references/nodes/biology.md
+canon_chapter: 必修2 第一章 遗传因子的发现
+graph_doc: references/pep-bio-bx2-ch1.md
+entry_question: 先学哪个节点：一对相对性状的杂交实验、分离定律，还是自由组合定律？
+
+sections:
+  - title: 孟德尔的豌豆杂交实验（一）
+    nodes:
+      - id: kp_mendel_pea_cross
+        display: 一对相对性状的杂交实验
+        aliases: [相对性状, 显性性状, 隐性性状, 性状分离, 去雄]
+        type: concept
+        l1: 能描述孟德尔豌豆杂交实验的操作（去雄、套袋、人工传粉）和实验现象——F1 全为显性性状，F2 出现性状分离，显性性状与隐性性状的数量比约为 3∶1
+        l2: 能区分显性性状与隐性性状，并解释性状分离的含义
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：高茎×矮茎→F1 全为高茎；F1 自交→F2 中高茎与矮茎同时出现，矮茎是隐性性状
+        pitfall: 相对性状指一种生物同一种性状的不同表现类型——豌豆的高茎与矮茎是相对性状，高茎与子叶饱满不是
+        confusion: 性状分离指杂种后代同时出现显性性状和隐性性状的现象——F1 只显不分离，F2 才出现性状分离
+        source: {textbook: "P2-6", curriculum: 3.2.3}
+      - id: kp_segregation_law
+        display: 分离定律
+        aliases: [基因分离定律, 遗传因子]
+        type: concept
+        l1: 能说出孟德尔对分离现象的解释：性状由遗传因子决定，体细胞中遗传因子成对存在，F1 形成配子时成对的遗传因子彼此分离，配子中只含有每对遗传因子中的一个
+        l2: 能阐明分离定律的内容，并说出测交实验的结果（166 株后代中 87 株高茎、79 株矮茎，约为 1∶1）对假说的验证作用
+        l3: 待补录：延伸不在本节点展开
+        example: 自编推理题：测交后代 1∶1 的结果说明 F1 产生了两种数目相等的配子——这正是假说中“成对的遗传因子分离”的预期
+        pitfall: 成对的遗传因子彼此分离、分别进入不同的配子——分离发生在形成配子时，不是在配子结合时
+        confusion: 测交是与隐性纯合子杂交——用隐性亲本检验 F1 产生配子的情况，别把测交当成自交
+        source: {textbook: P5-8, curriculum: 3.2.3}
+      - id: kp_hypothesis_deduction
+        display: 假说-演绎法
+        aliases: [假说, 演绎推理]
+        type: concept
+        l1: 能描述假说-演绎法的基本步骤：在观察和分析的基础上提出问题→作出假说→演绎推理→实验验证
+        l2: 能用假说-演绎法完整说明孟德尔对分离现象的解释与测交验证的推理过程
+        l3: 待补录：延伸不在本节点展开
+        example: 自编流程题：孟德尔由 F2 出现 3∶1 的性状分离提出假说→推测测交结果应为 1∶1→再用测交实验验证假说
+        pitfall: 假说是对现象的解释，必须通过实验验证——测交就是验证假说的关键一步
+        confusion: 演绎推理是从假说出发推出“如果假说成立，测交应出现 1∶1”的预期结果——先推理、后实验
+        source: {textbook: P5-8, curriculum: 3.2.3}
+  - title: 孟德尔的豌豆杂交实验（二）
+    nodes:
+      - id: kp_free_combination
+        display: 自由组合定律
+        aliases: [基因自由组合定律, 两对相对性状的杂交实验]
+        type: concept
+        l1: 能描述两对相对性状的杂交实验现象——F1 全为显性性状，F2 出现性状分离，四种表现型的比例接近 9∶3∶3∶1
+        l2: 能阐明自由组合定律：控制不同性状的遗传因子分离和组合互不干扰，F1 形成配子时成对的遗传因子分离、不同对的遗传因子自由组合
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：黄圆×绿皱→F1 全为黄圆；F1 自交→F2 出现黄圆、黄皱、绿圆、绿皱四种表现型，比例接近 9∶3∶3∶1
+        pitfall: 自由组合发生在“不同对”的遗传因子之间——同一对的遗传因子仍遵循分离定律，两定律同时起作用
+        confusion: 分离定律说的是每对遗传因子的行为，自由组合定律说的是不同对遗传因子之间的关系——答题时先逐对分析再自由组合
+        source: {textbook: P9-14, curriculum: 3.2.3}
+      - id: kp_mendel_methods
+        display: 孟德尔实验方法的启示
+        aliases: [孟德尔]
+        type: concept
+        l1: 能举例说明孟德尔实验方法的启示：正确选用实验材料、由单因素到多因素地研究问题、运用统计学方法分析实验结果
+        l2: 能结合山柳菊实验的挫折说明选材与方法的重要性，并举例说出孟德尔遗传规律在育种实践中的应用
+        l3: 待补录：延伸不在本节点展开
+        example: 自编反思题：孟德尔用豌豆成功、用山柳菊受挫——豌豆自花传粉闭花受粉、具有稳定且易区分的相对性状，是理想的实验材料
+        pitfall: 孟德尔把数学统计方法引入遗传学研究——F2 的 3∶1 是大量数据统计分析的结果，单株数据说明不了比例
+        confusion: 孟德尔发现遗传规律历经波折（山柳菊实验未果）——科学研究的道路不是一帆风顺的
+        source: {textbook: "P2、P12-16", curriculum: 3.2.3}
+
+edges:
+  - [kp_mendel_pea_cross, kp_segregation_law, 同章衔接]
+  - [kp_segregation_law, kp_hypothesis_deduction, 同章衔接]
+  - [kp_hypothesis_deduction, kp_free_combination, 同章衔接]
+  - [kp_free_combination, kp_mendel_methods, 同章衔接]
+
+combo:
+  - [kp_segregation_law, kp_mitosis, 常考组合]
+  - [kp_free_combination, kp_mitosis, 常考组合]
+
+later:
+  - {id: bx2_ch2, display: 第二章 基因和染色体的关系}
