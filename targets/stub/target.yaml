@@ -1,0 +1,19 @@
+name: stub
+repo: stub://local
+ref: 0000000000000000000000000000000000000000
+last_green: 0000000000000000000000000000000000000000
+baseline_chapter: demo-ch1
+skill_dir: skills/high-school-ai-tutor
+paths:
+  canon_dir: "{skill}/references/nodes"
+  study_pages_dir: "{skill}/references/study-pages"
+  graph_seeds: "{skill}/data/graph-seeds.py"
+  graph_db: "{skill}/data/graph.db"
+  graph_script: "{skill}/scripts/graph.py"
+  skill_md: "{skill}/SKILL.md"
+  records_script: "{skill}/scripts/records.py"
+  check_script: "{repo}/tests/check.py"
+  run_script: "{repo}/tests/run.sh"
+seeds:
+  nodes_var: SEED_NODES
+  edges_var: SEED_EDGES
