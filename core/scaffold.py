@@ -72,6 +72,7 @@ def main(argv: list[str] | None = None) -> int:
     init_code = _init_db(artifacts)
     if init_code != 0:
         return init_code
+    _warn_order(artifacts, chapters)
     print(artifacts["snippet"])
     print(f"已写入 {len(artifacts['written'])} 个路径。")
     return 0
@@ -361,6 +362,32 @@ def _skill_path(adapter, repo: Path, relative: str) -> Path:
     if relative.startswith("/") or ".." in relative.split("/"):
         raise ValueError(f"路径越界：{relative}")
     return repo / str(adapter.config["skill_dir"]) / relative
+
+
+def _warn_order(artifacts: dict, chapters: list) -> None:
+    """topo 同层平局按 id 字母序（graph.py 用 ready.sort()）。
+    与 yaml 教学顺序不一致时警告：不阻塞，但建议起草侧调整 id 选词。"""
+    script = artifacts["graph_script"]
+    db = artifacts["graph_db"]
+    for chapter in chapters:
+        completed = subprocess.run(
+            [sys.executable, str(script), "topo", "--chapter", chapter.chapter_id, "--db", str(db)],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if completed.returncode != 0:
+            print(f"WARN topo 失败，跳过顺序检查：{chapter.chapter_id}", file=sys.stderr)
+            continue
+        ordered = [line.split("\t", 1)[0] for line in completed.stdout.splitlines() if line.strip()]
+        expected = [node.id for node in chapter.nodes]
+        if ordered != expected:
+            print(
+                "WARN topo 顺序与 yaml 教学顺序不一致（同层平局按 id 字母序）：\n"
+                f"  topo: {' → '.join(ordered)}\n"
+                f"  yaml: {' → '.join(expected)}",
+                file=sys.stderr,
+            )
 
 
 def _warn_ref(repo: Path, ref: str) -> None:
