@@ -1,0 +1,59 @@
+# 选必2 第一章 种群及其动态 —— 知识库唯一真相源
+chapter_id: xbx2-ch1
+subject: 生物
+book: 人教版《生物学 选择性必修2 生物与环境》（2019）
+book_short: bio-xbx2
+chapter_no: 1
+chapter_title: 种群及其动态
+canon_file: references/nodes/biology.md
+canon_chapter: 选择性必修2 第一章 种群及其动态
+graph_doc: references/pep-bio-xbx2-ch1.md
+entry_question: 先学哪个节点：种群的数量特征、种群数量的变化，还是影响种群数量变化的因素？
+
+sections:
+  - title: 种群的数量特征
+    nodes:
+      - id: kp_population_features
+        display: 种群的数量特征
+        aliases: [种群密度, 出生率, 死亡率, 年龄结构, 性别比例, 样方法]
+        type: concept
+        l1: 能列举种群具有种群密度、出生率和死亡率、迁入率和迁出率、年龄结构、性别比例等特征
+        l2: 能说出调查种群密度的方法——样方法（植物及活动能力弱的动物）和标记重捕法（活动能力强的动物）
+        l3: 待补录：延伸不在本节点展开
+        example: 自编方法选择题：调查蒲公英的种群密度用样方法；调查某鼠的种群密度用标记重捕法
+        pitfall: 种群密度是最基本的数量特征；出生率和死亡率、迁入率和迁出率直接决定种群密度的大小
+        confusion: 年龄结构（增长型、稳定型、衰退型）可以预测种群密度的变化趋势，但不能直接改变密度
+        source: {textbook: "P1-5", curriculum: 2.1.1}
+  - title: 种群数量的变化
+    nodes:
+      - id: kp_population_change
+        display: 种群数量的变化
+        aliases: [J形曲线, S形曲线, K值, 数学模型]
+        type: concept
+        l1: 能尝试建立数学模型解释种群的数量变动——食物充足、空间无限、没有天敌等理想条件下呈“J”形曲线；资源和空间有限时呈“S”形曲线
+        l2: 能说出 K 值（环境容纳量）的含义，并举例说明其在渔业捕捞、害虫防治等生产生活中的应用
+        l3: 待补录：延伸不在本节点展开
+        example: 自编应用题：捕捞后使鱼群数量维持在 K/2 左右——此时种群增长速率最大，可获得持续的高产量
+        pitfall: “S”形曲线的种群增长速率先增大后减小，在 K/2 时最大——增长速率和增长率是两个不同的量
+        confusion: “J”形曲线只在理想条件下出现——食物和空间充裕、气候适宜、没有天敌等条件在自然界很少持续存在
+        source: {textbook: "P6-11", curriculum: 2.1.2}
+  - title: 影响种群数量变化的因素
+    nodes:
+      - id: kp_population_factors
+        display: 影响种群数量变化的因素
+        aliases: [非生物因素, 种内竞争]
+        type: concept
+        l1: 能举例说出阳光、温度和水等非生物因素以及不同物种之间的相互作用都会影响生物的种群特征
+        l2: 能结合实例分析种群数量变化的非生物因素和生物因素（如教材中雪兔和猞猁数量的循环变化）
+        l3: 待补录：延伸不在本节点展开
+        example: 教材资料自编题：雪兔和猞猁的数量随时间循环变化——捕食关系使两种种群数量相互制约、周期性波动
+        pitfall: 影响种群数量的因素分为非生物因素（阳光、温度、水等）和生物因素（种内竞争、捕食、竞争等）
+        confusion: 同种生物个体之间也存在种内竞争——影响种群数量的生物因素不全是种间关系
+        source: {textbook: "P12-15", curriculum: 2.1.3}
+
+edges:
+  - [kp_population_features, kp_population_change, 同章衔接]
+  - [kp_population_change, kp_population_factors, 同章衔接]
+
+later:
+  - {id: xbx2_ch2, display: 第二章 群落及其演替}

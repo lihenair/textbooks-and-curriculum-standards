@@ -1,0 +1,48 @@
+# 选必2 第四章 人与环境 —— 知识库唯一真相源
+chapter_id: xbx2-ch4
+subject: 生物
+book: 人教版《生物学 选择性必修2 生物与环境》（2019）
+book_short: bio-xbx2
+chapter_no: 4
+chapter_title: 人与环境
+canon_file: references/nodes/biology.md
+canon_chapter: 选择性必修2 第四章 人与环境
+graph_doc: references/pep-bio-xbx2-ch4.md
+entry_question: 先学哪个节点：人类活动对生态环境的影响，还是生物多样性及其保护？
+
+sections:
+  - title: 人类活动对生态环境的影响
+    nodes:
+      - id: kp_human_impact
+        display: 人类活动对生态环境的影响
+        aliases: [人口增长, 温室效应, 生态足迹]
+        type: concept
+        l1: 能概述人口增长和人类活动对生态环境的影响
+        l2: 能分析温室效应等全球性生态环境问题的成因和危害，并说出应对措施的原理
+        l3: 待补录：延伸不在本节点展开
+        example: 自编分析题：CO₂ 等温室气体的大量排放导致温室效应加剧——全球气候变暖引发冰川消融、海平面上升等一系列生态问题
+        pitfall: 人口增长会带来对资源、能源和环境更大的压力——分析生态环境问题时不能忽略人口因素
+        confusion: 保护生态环境不是完全不能利用资源——而是要合理利用，实现人与自然的和谐与可持续发展
+        source: {textbook: "P79-83", curriculum: 模块2生物与环境}
+  - title: 生物多样性及其保护
+    nodes:
+      - id: kp_biodiversity_protection
+        display: 生物多样性及其保护
+        aliases: [就地保护, 易地保护]
+        type: concept
+        l1: 能概述生物多样性的三个层次（基因多样性、物种多样性和生态系统多样性）及其直接价值、间接价值和潜在价值
+        l2: 能举例说出保护生物多样性的措施——就地保护（建立自然保护区）和易地保护（如动物园、植物园），并理解保护与发展的关系
+        l3: 待补录：延伸不在本节点展开
+        example: 自编价值分类题：森林的固碳作用属于间接价值；药用植物的药用成分属于直接价值；尚未发现的潜在用途属于潜在价值
+        pitfall: 生物多样性包括基因多样性、物种多样性和生态系统多样性三个层次——答“多样性”时三个层次都要想到
+        confusion: 就地保护（建立自然保护区）是最有效的保护措施；易地保护是对就地保护的补充——两者适用情形不同
+        source: {textbook: "P84-89", curriculum: 模块2生物与环境}
+
+edges:
+  - [kp_human_impact, kp_biodiversity_protection, 同章衔接]
+
+combo:
+  - [kp_biodiversity_protection, kp_coevolution_biodiversity, 常考组合]
+
+later:
+  - {id: bio_xbx3, display: 选择性必修3《生物技术与工程》}

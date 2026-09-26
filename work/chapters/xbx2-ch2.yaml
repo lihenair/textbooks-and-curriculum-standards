@@ -1,0 +1,59 @@
+# 选必2 第二章 群落及其演替 —— 知识库唯一真相源
+chapter_id: xbx2-ch2
+subject: 生物
+book: 人教版《生物学 选择性必修2 生物与环境》（2019）
+book_short: bio-xbx2
+chapter_no: 2
+chapter_title: 群落及其演替
+canon_file: references/nodes/biology.md
+canon_chapter: 选择性必修2 第二章 群落及其演替
+graph_doc: references/pep-bio-xbx2-ch2.md
+entry_question: 先学哪个节点：群落的结构、群落的主要类型，还是群落的演替？
+
+sections:
+  - title: 群落的结构
+    nodes:
+      - id: kp_community_structure
+        display: 群落的结构
+        aliases: [群落, 丰富度, 种间关系, 垂直结构, 水平结构]
+        type: concept
+        l1: 能描述群落的物种组成（物种丰富度、优势种），并说出种间关系包括原始合作、互利共生、捕食、寄生和竞争等
+        l2: 能分析群落具有垂直结构和水平结构等特征，说明不同群落中的生物具有与该群落环境相适应的形态结构、生理特征和分布特点
+        l3: 待补录：延伸不在本节点展开
+        example: 自编分层题：森林群落中乔木层、灌木层、草本层的分层现象属于垂直结构——分层提高了群落利用阳光等环境资源的能力
+        pitfall: 群落的物种组成是区别不同群落的重要特征——物种丰富度和优势种都要分析
+        confusion: 垂直结构是群落中“不同物种”的分层现象——不是同一个种群内部不同个体的分层
+        source: {textbook: "P21-30", curriculum: "2.1.4、2.1.6"}
+  - title: 群落的主要类型
+    nodes:
+      - id: kp_community_types
+        display: 群落的主要类型
+        aliases: [荒漠生物群落, 草原生物群落, 森林生物群落]
+        type: concept
+        l1: 能举例说出荒漠生物群落、草原生物群落和森林生物群落等主要类型及其特点
+        l2: 能分析不同群落中的生物具有与该群落环境相适应的形态结构、生理特征和分布特点
+        l3: 待补录：延伸不在本节点展开
+        example: 自编教材实例：三江源地区位于青藏高原腹地——不同区域的环境条件孕育出不同类型的生物群落
+        pitfall: 群落类型主要由气候等环境条件决定——干旱地区以荒漠和草原群落为主，湿润地区以森林群落为主
+        confusion: 判断群落类型的依据是该区域的物种组成和整体环境——种群是一个物种的全部个体，群落是所有生物的集合
+        source: {textbook: "P32-36", curriculum: 2.1.6}
+  - title: 群落的演替
+    nodes:
+      - id: kp_ecological_succession
+        display: 群落的演替
+        aliases: [初生演替, 次生演替]
+        type: concept
+        l1: 能阐明一个群落替代另一个群落的演替过程，包括初生演替和次生演替两种类型
+        l2: 能举例说明人类活动（如我国的国土绿化和防沙治沙）可以影响群落演替的方向和速度
+        l3: 待补录：延伸不在本节点展开
+        example: 自编对比题：裸岩上的初生演替（地衣→苔藓→草本→灌木→森林阶段）与火灾后草原上保留土壤条件的次生演替
+        pitfall: 初生演替发生在从来没有被植物覆盖的地面或原来存在过植被、后来被彻底消灭了的地方；次生演替发生在保留有土壤条件甚至种子或繁殖体的地方
+        confusion: 人类活动往往会使群落演替按照不同于自然演替的速度和方向进行——退耕还林还草就是主动引导演替的例子
+        source: {textbook: "P37-45", curriculum: 2.1.5}
+
+edges:
+  - [kp_community_structure, kp_community_types, 同章衔接]
+  - [kp_community_types, kp_ecological_succession, 同章衔接]
+
+later:
+  - {id: xbx2_ch3, display: 第三章 生态系统及其稳定性}
