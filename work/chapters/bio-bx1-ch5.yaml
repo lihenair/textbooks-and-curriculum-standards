@@ -1,0 +1,138 @@
+# 必修1 第五章 细胞的能量供应和利用 —— 知识库唯一真相源
+chapter_id: bio-bx1-ch5
+subject: 生物
+book: 人教版《生物学 必修1 分子与细胞》（2019）
+book_short: bio-bx1
+chapter_no: 5
+chapter_title: 细胞的能量供应和利用
+canon_file: references/nodes/biology.md
+canon_chapter: 必修1 第五章 细胞的能量供应和利用
+graph_doc: references/pep-bio-bx1-ch5.md
+entry_question: 先学哪个节点：酶、ATP，还是细胞呼吸和光合作用？
+
+sections:
+  - title: 降低化学反应活化能的酶
+    nodes:
+      - id: kp_enzyme_role
+        display: 酶的作用和本质
+        aliases: [活化能, 酶的本质]
+        type: concept
+        l1: 能说出酶是活细胞产生的具有催化作用的有机物，酶通过降低化学反应的活化能来促进反应
+        l2: 能说明酶的化学本质——绝大多数酶是蛋白质，少数酶是 RNA
+        l3: 待补录：延伸不在本节点展开
+        example: 自编问答：细胞代谢为什么离不开酶？——细胞内的每一步化学反应都需要酶催化降低活化能，才能顺利快速进行
+        pitfall: 酶通过降低活化能起催化作用，不为化学反应提供能量
+        confusion: 绝大多数酶是蛋白质，少数酶是 RNA——“绝大多数”不能说成“全部”
+        source: {textbook: P75-79, curriculum: 2.2.1}
+      - id: kp_enzyme_properties
+        display: 酶的特性
+        aliases: [高效性, 专一性, 酶活性]
+        type: concept
+        l1: 能说出酶具有高效性、专一性，以及酶的作用条件较温和的特性
+        l2: 能结合探究实验说明温度、pH 等条件对酶活性的影响，并分析实验设计中的变量控制
+        l3: 待补录：延伸不在本节点展开
+        example: 自编实验分析：过氧化氢酶只能催化过氧化氢分解，不能催化其他化学反应——这就是酶的专一性（教材思考·讨论）
+        pitfall: 酶的作用条件较温和——温度、pH 等条件偏离适宜范围，酶活性都会明显下降
+        confusion: 高效性是与无机催化剂相比催化效率更高；专一性是一种酶只能催化一种或一类化学反应
+        source: {textbook: P80-85, curriculum: 2.2.1}
+  - title: 细胞的能量“货币”ATP
+    nodes:
+      - id: kp_atp
+        display: ATP
+        aliases: [腺苷三磷酸, ATP与ADP的相互转化]
+        type: concept
+        l1: 能说出 ATP 的结构简式 A—P~P~P（A 代表腺苷、P 代表磷酸基团、~ 代表一种特殊的化学键）和中文名称腺苷三磷酸
+        l2: 能解释 ATP 是驱动细胞生命活动的直接能源物质，并能说明 ATP 与 ADP 相互转化的意义
+        l3: 待补录：延伸不在本节点展开
+        example: 自编问答：为什么把 ATP 称为细胞的能量“货币”？——ATP 是驱动细胞生命活动的直接能源物质，水解释放的能量直接用于各项生命活动
+        pitfall: A—P~P~P 中的两个 ~ 是特殊的化学键，ATP 水解为 ADP 和 Pi 时放能，供主动运输等生命活动利用
+        confusion: ATP 是直接能源物质而不是储能物质——储能靠脂肪、淀粉等，能量“货币”指随时可直接取用
+        source: {textbook: P86-89, curriculum: 2.2.2}
+  - title: 细胞呼吸的原理和应用
+    nodes:
+      - id: kp_aerobic_respiration
+        display: 有氧呼吸
+        aliases: [细胞呼吸]
+        type: concept
+        l1: 能说出有氧呼吸的主要场所是线粒体，并概述其三个阶段——第一阶段在细胞质基质中进行，葡萄糖分解成丙酮酸
+        l2: 能阐明有氧呼吸将储存在有机物中的能量转化为生命活动可以利用的能量，实现能量的逐步释放
+        l3: 待补录：延伸不在本节点展开
+        example: 自编场所对应题：有氧呼吸第一阶段在细胞质基质（葡萄糖分解成丙酮酸），后续阶段在线粒体中进行
+        pitfall: 有氧呼吸的主要场所是线粒体，但第一阶段在细胞质基质中进行——场所答错是高频失误
+        confusion: 线粒体具有内、外两层膜，内膜的某些部位向内腔折叠形成嵴——嵴扩大了内膜面积，上有多种与有氧呼吸有关的酶
+        source: {textbook: P90-93, curriculum: 2.2.4}
+      - id: kp_anaerobic_respiration
+        display: 无氧呼吸
+        aliases: []
+        type: concept
+        l1: 能说出无氧呼吸在无氧条件下进行，分解有机物只释放少量能量，产物是乳酸或酒精和二氧化碳
+        l2: 能举例说明不同生物无氧呼吸的产物不同——人和马铃薯块茎、水稻根、苹果果实等产生乳酸，乳酸菌无氧呼吸也产生乳酸
+        l3: 待补录：延伸不在本节点展开
+        example: 自编归类题：人剧烈运动时的肌肉细胞、马铃薯块茎、乳酸菌的无氧呼吸都产生乳酸；酵母菌等则产生酒精和二氧化碳
+        pitfall: 无氧呼吸分解有机物不彻底，只释放少量能量——多数能量仍储存在乳酸或酒精中
+        confusion: 无氧呼吸不需要氧气参与，但不是所有生物的无氧呼吸产物都相同——按产物分乳酸型和酒精型两类记忆
+        source: {textbook: P93-95, curriculum: 2.2.4}
+      - id: kp_respiration_application
+        display: 细胞呼吸原理的应用
+        aliases: []
+        type: concept
+        l1: 能举例说出细胞呼吸原理在生产和生活中的应用
+        l2: 能用细胞呼吸的原理分析控温、控氧等储藏和栽培措施背后的道理
+        l3: 待补录：延伸不在本节点展开
+        example: 自编分析题：粮油种子储藏要求低温、干燥、低氧——目的是减弱细胞呼吸，减少有机物的消耗
+        pitfall: 分析储藏类问题时抓住“减弱呼吸作用、减少有机物消耗”这一核心，再对应到温度、水分、氧气等具体条件
+        confusion: 酿酒利用的是酵母菌的无氧呼吸产生酒精；酿醋等则利用微生物的有氧代谢——不同发酵产品原理不同
+        source: {textbook: P94-96, curriculum: 2.2.4}
+  - title: 光合作用与能量转化
+    nodes:
+      - id: kp_pigment_separation
+        display: 绿叶中色素的提取和分离
+        aliases: [色素, 无水乙醇, 层析液]
+        type: experiment
+        l1: 能说出色素可以溶解在有机溶剂无水乙醇中提取，并能利用层析液在滤纸上分离——溶解度不同，扩散速度不同
+        l2: 能说出叶绿体中含有 4 种色素，并按滤纸条上色素带的位置顺序说出它们的名称
+        l3: 待补录：延伸不在本节点展开
+        example: 自编滤纸条排序题：色素带上从上到下依次是胡萝卜素、叶黄素、叶绿素a、叶绿素b——溶解度高的随层析液扩散得快
+        pitfall: 提取用无水乙醇（色素溶解在其中），分离用层析液（利用溶解度差异）——两种液体用途不同
+        confusion: 不同的色素在层析液中溶解度不同，溶解度高的随层析液在滤纸上扩散得快，反之则慢
+        source: {textbook: P97-98, curriculum: 2.2.3}
+      - id: kp_photosynthesis_principle
+        display: 光合作用的原理
+        aliases: [光反应, 暗反应, 碳反应]
+        type: concept
+        l1: 能说出光合作用概括地分为光反应和暗反应（现在也称为碳反应）两个阶段，光反应在类囊体上进行，糖的合成在叶绿体基质中进行
+        l2: 能说明植物细胞的叶绿体从太阳光中捕获能量，这些能量在二氧化碳和水转变为糖与氧气的过程中，转换并储存为糖分子中的化学能
+        l3: 待补录：延伸不在本节点展开
+        example: 自编场所对应题：光反应在类囊体上进行（4 种色素分布在类囊体的薄膜上），糖的合成在叶绿体基质中进行
+        pitfall: 光反应和暗反应（碳反应）紧密联系——光反应为糖的合成提供物质和能量，两个阶段不能割裂开理解
+        confusion: 吸收光能的 4 种色素分布在类囊体的薄膜上——色素在类囊体薄膜上，不在基质中
+        source: {textbook: P99-105, curriculum: 2.2.3}
+      - id: kp_photosynthesis_factors
+        display: 影响光合作用强度的因素
+        aliases: [光合作用强度]
+        type: concept
+        l1: 能举例说出光照强度、二氧化碳浓度、温度等因素会影响光合作用强度
+        l2: 能运用探究“光照强度对光合作用强度的影响”的实验思路（自变量控制、因变量观测）分析生产生活中的实际问题
+        l3: 待补录：延伸不在本节点展开
+        example: 自编实验题：用打孔器取叶圆片、用注射器抽出叶内气体使其沉入水中，再放到不同光照强度下比较叶圆片上浮所需时间
+        pitfall: 探究时光照强度是自变量，温度、二氧化碳浓度等属于无关变量，要保持相同且适宜
+        confusion: 光合作用强度可以用单位时间内叶圆片上浮的数量或时间等指标来衡量——先定因变量再定观测方法
+        source: {textbook: P106-108, curriculum: 2.2.3}
+
+edges:
+  - [kp_enzyme_role, kp_enzyme_properties, 同章衔接]
+  - [kp_enzyme_properties, kp_atp, 同章衔接]
+  - [kp_atp, kp_aerobic_respiration, 同章衔接]
+  - [kp_aerobic_respiration, kp_anaerobic_respiration, 同章衔接]
+  - [kp_anaerobic_respiration, kp_respiration_application, 同章衔接]
+  - [kp_respiration_application, kp_pigment_separation, 同章衔接]
+  - [kp_pigment_separation, kp_photosynthesis_principle, 同章衔接]
+  - [kp_photosynthesis_principle, kp_photosynthesis_factors, 同章衔接]
+
+combo:
+  - [kp_atp, kp_aerobic_respiration, 常考组合]
+  - [kp_organelles, kp_aerobic_respiration, 常考组合]
+  - [kp_enzyme_properties, kp_photosynthesis_factors, 常考组合]
+
+later:
+  - {id: bx1_ch6, display: 第六章 细胞的生命历程}
