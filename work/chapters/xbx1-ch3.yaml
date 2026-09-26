@@ -1,0 +1,62 @@
+# 选必1 第三章 体液调节 —— 知识库唯一真相源
+chapter_id: xbx1-ch3
+subject: 生物
+book: 人教版《生物学 选择性必修1 稳态与调节》（2019）
+book_short: bio-xbx1
+chapter_no: 3
+chapter_title: 体液调节
+canon_file: references/nodes/biology.md
+canon_chapter: 选择性必修1 第三章 体液调节
+graph_doc: references/pep-bio-xbx1-ch3.md
+entry_question: 先学哪个节点：激素与内分泌系统、激素调节的过程，还是体液调节与神经调节的关系？
+
+sections:
+  - title: 激素与内分泌系统
+    nodes:
+      - id: kp_hormones_endocrine
+        display: 激素与内分泌系统
+        aliases: [内分泌腺, 垂体, 甲状腺, 胰岛]
+        type: concept
+        l1: 能说出人体内分泌系统主要由内分泌腺（垂体、甲状腺、胸腺、肾上腺、胰岛和性腺等）组成，其分泌的各类激素参与生命活动的调节
+        l2: 能举例说出激素调节的特点——通过体液运输、微量和高效、作用于靶器官和靶细胞
+        l3: 待补录：延伸不在本节点展开
+        example: 自编情境题：教材中“胰岛素泵”的设想依据是胰岛素随体液运输、微量高效地调节血糖
+        pitfall: 激素随体液运输到全身各处，但只作用于靶器官、靶细胞——“到达全身”不等于“作用于全身”
+        confusion: 激素既不组成细胞结构、不提供能量、也不起催化作用，只起调节作用——与酶的功能区分开
+        source: {textbook: "P42-48", curriculum: 1.4.1}
+  - title: 激素调节的过程
+    nodes:
+      - id: kp_hormone_process
+        display: 激素调节的过程
+        aliases: [血糖调节, 甲状腺激素, 分级调节, 反馈调节]
+        type: concept
+        l1: 能概述血糖的来源与去向，说出胰岛素降低血糖、胰高血糖素升高血糖的拮抗作用
+        l2: 能以甲状腺激素分泌的调节和血糖平衡的调节为例，说明激素通过分级调节、反馈调节等机制维持机体的稳态
+        l3: 待补录：延伸不在本节点展开
+        example: 自编血糖题：血糖升高→胰岛 B 细胞分泌胰岛素增加→促进组织细胞摄取、利用和储存葡萄糖→血糖下降
+        pitfall: 甲状腺激素的分级调节轴是“下丘脑—垂体—甲状腺”，同时甲状腺激素浓度过高会反过来抑制下丘脑和垂体的分泌——分级与反馈同时存在
+        confusion: 胰岛素降血糖、胰高血糖素升血糖——作用相反但协作维持血糖稳定，这叫拮抗而不是“相互抑制”
+        source: {textbook: "P49-55", curriculum: 1.4.2}
+  - title: 体液调节与神经调节的关系
+    nodes:
+      - id: kp_humoral_nervous
+        display: 体液调节与神经调节的关系
+        aliases: [体液调节, 体温调节, 水盐平衡]
+        type: concept
+        l1: 能举例说出神经调节与体液调节相互协调共同维持机体的稳态（如体温调节、水盐平衡的调节）
+        l2: 能说明某些体液成分（如 CO₂）也参与体液调节，并说明下丘脑在神经调节与体液调节中的枢纽作用
+        l3: 待补录：延伸不在本节点展开
+        example: 自编体温调节题：寒冷刺激→冷觉产生 + 甲状腺激素增多→产热增加——神经调节与体液调节共同维持体温稳定
+        pitfall: 体温调节的感受器→下丘脑体温调节中枢→效应器（汗腺、皮肤血管、骨骼肌、甲状腺等）——下丘脑是体温调节中枢
+        confusion: 体液调节的主要内容是激素调节，但 CO₂ 等化学物质对生命活动的调节也属于体液调节
+        source: {textbook: "P56-63", curriculum: "1.4.3、1.4.4"}
+
+edges:
+  - [kp_hormones_endocrine, kp_hormone_process, 同章衔接]
+  - [kp_hormone_process, kp_humoral_nervous, 同章衔接]
+
+combo:
+  - [kp_hormone_process, kp_internal_env_properties, 常考组合]
+
+later:
+  - {id: xbx1_ch4, display: 第四章 免疫调节}

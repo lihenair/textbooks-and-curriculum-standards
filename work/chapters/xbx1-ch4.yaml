@@ -1,0 +1,76 @@
+# 选必1 第四章 免疫调节 —— 知识库唯一真相源
+chapter_id: xbx1-ch4
+subject: 生物
+book: 人教版《生物学 选择性必修1 稳态与调节》（2019）
+book_short: bio-xbx1
+chapter_no: 4
+chapter_title: 免疫调节
+canon_file: references/nodes/biology.md
+canon_chapter: 选择性必修1 第四章 免疫调节
+graph_doc: references/pep-bio-xbx1-ch4.md
+entry_question: 先学哪个节点：免疫系统的组成和功能、特异性免疫，还是免疫失调？
+
+sections:
+  - title: 免疫系统的组成和功能
+    nodes:
+      - id: kp_immune_system
+        display: 免疫系统的组成和功能
+        aliases: [免疫器官, 免疫细胞, 免疫活性物质]
+        type: concept
+        l1: 能举例说出免疫器官（脾、淋巴结、扁桃体、骨髓、胸腺等）、免疫细胞（淋巴细胞、吞噬细胞等）和免疫活性物质（抗体、细胞因子、溶菌酶等）是免疫调节的结构与物质基础
+        l2: 能说出免疫系统具有免疫防御、免疫自稳和免疫监视三大功能
+        l3: 待补录：延伸不在本节点展开
+        example: 自编归类题：淋巴结与脾（免疫器官）、T 细胞与吞噬细胞（免疫细胞）、抗体与溶菌酶（免疫活性物质）
+        pitfall: 免疫活性物质是由免疫细胞或其他细胞产生的、发挥免疫作用的物质——抗体、细胞因子、溶菌酶都属于此类
+        confusion: 骨髓和胸腺是免疫细胞出生和成熟的地方——它们是免疫器官，不要当成普通器官
+        source: {textbook: "P64-69", curriculum: 1.5.1}
+  - title: 特异性免疫
+    nodes:
+      - id: kp_specific_immunity
+        display: 特异性免疫
+        aliases: [体液免疫, 细胞免疫, 浆细胞, 抗体]
+        type: concept
+        l1: 能概述人体的免疫包括生来就有的非特异性免疫和后天获得的特异性免疫
+        l2: 能阐明特异性免疫通过体液免疫（B 细胞活化→浆细胞产生抗体）和细胞免疫（细胞毒性 T 细胞识别并接触靶细胞）两种方式，针对特定病原体发生免疫应答
+        l3: 待补录：延伸不在本节点展开
+        example: 自编对比题：体液免疫靠浆细胞分泌抗体“作战”，细胞免疫靠细胞毒性 T 细胞接触靶细胞“作战”——两者密切配合
+        pitfall: B 细胞的活化需要两个信号（病原体与 B 细胞直接接触、辅助性 T 细胞传递信号）和细胞因子的作用
+        confusion: 非特异性免疫（皮肤黏膜屏障、吞噬作用）生来就有、不针对特定病原体；特异性免疫“量身定制”、针对特定病原体
+        source: {textbook: "P70-75", curriculum: "1.5.2、1.5.3"}
+  - title: 免疫失调
+    nodes:
+      - id: kp_immune_disorder
+        display: 免疫失调
+        aliases: [过敏, 自身免疫病, 艾滋病, 免疫缺陷]
+        type: concept
+        l1: 能举例说出免疫功能异常可能引发的疾病——过敏反应、自身免疫病（如系统性红斑狼疮）和免疫缺陷病（如艾滋病）
+        l2: 能分析 HIV 攻击人体免疫系统（特别是辅助性 T 细胞）导致免疫功能缺陷的机理
+        l3: 待补录：延伸不在本节点展开
+        example: 自编归类题：花粉引起的鼻涕喷嚏（过敏反应）、系统性红斑狼疮（自身免疫病）、艾滋病（免疫缺陷病）——三种免疫失调类型
+        pitfall: 过敏反应的特点是发作迅速、反应强烈、消退较快，一般不会破坏组织细胞，也不会引起组织严重损伤
+        confusion: 自身免疫病是免疫系统“敌我不分”攻击自身成分；过敏反应是对本来无害的物质反应过度——两者都属于免疫功能异常
+        source: {textbook: "P76-80", curriculum: 1.5.4}
+  - title: 免疫学的应用
+    nodes:
+      - id: kp_immune_application
+        display: 免疫学的应用
+        aliases: [疫苗]
+        type: concept
+        l1: 能举例说出疫苗是免疫学的重要应用——接种疫苗使人体产生相应的抗体和记忆细胞，获得对特定病原体的免疫力
+        l2: 能举例说出免疫学的应用还包括疾病的检测和器官移植中的处理等
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：接种新冠疫苗后体内产生抗体和记忆细胞——再次遇到该病原体时能快速产生强烈的免疫应答
+        pitfall: 疫苗通常是灭活的或减毒的病原体制成的生物制品——接种疫苗属于预防措施，不能治疗已经发生的疾病
+        confusion: 患过某病后不再患该病与接种疫苗获得免疫的原理相同——都产生了记忆细胞和抗体
+        source: {textbook: "P81-85", curriculum: 1.5}
+
+edges:
+  - [kp_immune_system, kp_specific_immunity, 同章衔接]
+  - [kp_specific_immunity, kp_immune_disorder, 同章衔接]
+  - [kp_immune_disorder, kp_immune_application, 同章衔接]
+
+combo:
+  - [kp_specific_immunity, kp_hormone_process, 常考组合]
+
+later:
+  - {id: xbx1_ch5, display: 第五章 植物生命活动的调节}

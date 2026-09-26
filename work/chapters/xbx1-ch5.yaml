@@ -1,0 +1,76 @@
+# 选必1 第五章 植物生命活动的调节 —— 知识库唯一真相源
+chapter_id: xbx1-ch5
+subject: 生物
+book: 人教版《生物学 选择性必修1 稳态与调节》（2019）
+book_short: bio-xbx1
+chapter_no: 5
+chapter_title: 植物生命活动的调节
+canon_file: references/nodes/biology.md
+canon_chapter: 选择性必修1 第五章 植物生命活动的调节
+graph_doc: references/pep-bio-xbx1-ch5.md
+entry_question: 先学哪个节点：植物生长素、其他植物激素，还是植物生长调节剂？
+
+sections:
+  - title: 植物生长素
+    nodes:
+      - id: kp_auxin_discovery
+        display: 植物生长素
+        aliases: [生长素, 向光性, 胚芽鞘]
+        type: concept
+        l1: 能概述科学家经过不断的探索发现植物生长素的历程（达尔文、詹森、拜特、温特的实验）
+        l2: 能说明生长素调节植物生长表现出两重性——既能促进生长，也能抑制生长（如顶端优势）
+        l3: 待补录：延伸不在本节点展开
+        example: 自编实验分析题：温特的实验——琼脂块接触过尖端后能引起去尖端胚芽鞘弯曲生长，证明造成弯曲的是一种化学物质
+        pitfall: 单侧光照射使生长素在尖端发生横向运输，背光侧生长素分布多、生长快——这是向光性的原因
+        confusion: 生长素的两重性——低浓度促进生长、高浓度抑制生长；顶端优势（顶芽优先生长、侧芽受抑制）就是两重性的体现
+        source: {textbook: "P88-94", curriculum: 1.6.1}
+  - title: 其他植物激素
+    nodes:
+      - id: kp_other_hormones
+        display: 其他植物激素
+        aliases: [赤霉素, 细胞分裂素, 脱落酸, 乙烯]
+        type: concept
+        l1: 能举例说出赤霉素、细胞分裂素、脱落酸、乙烯等主要植物激素的作用
+        l2: 能说明植物的生长发育过程不是受单一激素的调节，而是由多种激素相互作用、共同调节的
+        l3: 待补录：延伸不在本节点展开
+        example: 自编归类题：赤霉素促进茎的伸长和种子萌发；脱落酸抑制细胞分裂、促进叶和果实的衰老和脱落；乙烯促进果实成熟
+        pitfall: 植物的生长发育过程不是受单一激素的调节，而是由多种激素相互作用、共同调节的
+        confusion: 乙烯促进果实成熟，不是“催长”——乙烯利催熟香蕉利用的正是乙烯的作用
+        source: {textbook: "P95-98", curriculum: 1.6.2}
+  - title: 植物生长调节剂的应用
+    nodes:
+      - id: kp_growth_regulators
+        display: 植物生长调节剂的应用
+        aliases: [植物生长调节剂]
+        type: concept
+        l1: 能举例说出植物生长调节剂在生产上的应用（如催熟、促进插条生根、除草）
+        l2: 能分析植物生长调节剂应用的利与弊——效果稳定、节省成本，但使用不当会影响产品品质和人体健康
+        l3: 待补录：延伸不在本节点展开
+        example: 自编应用题：用乙烯利催熟香蕉、番茄；用生长素类似物促进扦插枝条生根
+        pitfall: 植物生长调节剂效果稳定、原料广泛、便宜，但使用不当可能影响产品品质和人体健康——浓度、时间要合适
+        confusion: 植物生长调节剂是人工合成的化学物质，与植物激素的区别在于来源（人工合成与植物自身产生）
+        source: {textbook: "P99-103", curriculum: 1.6.3}
+  - title: 环境因素参与调节植物的生命活动
+    nodes:
+      - id: kp_environment_plant
+        display: 环境因素参与调节植物的生命活动
+        aliases: [光敏色素, 向重力性]
+        type: concept
+        l1: 能举例说出光、重力、温度等环境因素参与调节植物的生命活动
+        l2: 能说明植物依靠光敏色素等感受光信号，调控萌发、生长、开花等生命活动
+        l3: 待补录：延伸不在本节点展开
+        example: 自编辨析题：光线使植物弯向光源生长（向光性）、根顺着重力方向生长（向重力性）——环境信号参与调节
+        pitfall: 光既为光合作用提供能量，又作为信号调节植物的生命活动——两种作用不同
+        confusion: 光敏色素分布在植物体的各个部位，感受光信号后影响特定的生理过程
+        source: {textbook: "P104-109", curriculum: 1.6.4}
+
+edges:
+  - [kp_auxin_discovery, kp_other_hormones, 同章衔接]
+  - [kp_other_hormones, kp_growth_regulators, 同章衔接]
+  - [kp_growth_regulators, kp_environment_plant, 同章衔接]
+
+combo:
+  - [kp_auxin_discovery, kp_environment_plant, 常考组合]
+
+later:
+  - {id: bio_xbx2, display: 选择性必修2《生物与环境》}
