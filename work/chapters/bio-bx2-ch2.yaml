@@ -1,0 +1,75 @@
+# 必修2 第二章 基因和染色体的关系 —— 知识库唯一真相源
+chapter_id: bio-bx2-ch2
+subject: 生物
+book: 人教版《生物学 必修2 遗传与进化》（2019）
+book_short: bio-bx2
+chapter_no: 2
+chapter_title: 基因和染色体的关系
+canon_file: references/nodes/biology.md
+canon_chapter: 必修2 第二章 基因和染色体的关系
+graph_doc: references/pep-bio-bx2-ch2.md
+entry_question: 先学哪个节点：减数分裂、受精作用，还是伴性遗传？
+
+sections:
+  - title: 减数分裂和受精作用
+    nodes:
+      - id: kp_meiosis
+        display: 减数分裂
+        aliases: [减数分裂Ⅰ, 减数分裂Ⅱ, 联会, 四分体]
+        type: concept
+        l1: 能概述减数分裂是进行有性生殖的生物在产生成熟生殖细胞时进行的染色体数目减半的细胞分裂
+        l2: 能描述减数分裂Ⅰ的主要特征——同源染色体配对联会、四分体中的非姐妹染色单体可以发生互换、同源染色体分离并分别移向细胞两极，以及减数分裂Ⅱ的过程
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：精细胞或卵细胞中的染色体数目比原始生殖细胞减少一半——“减数”由此得名（课标：阐明减数分裂产生染色体数量减半的精细胞或卵细胞）
+        pitfall: 减数分裂Ⅰ的三句要点要连起来记：同源染色体配对联会、四分体中非姐妹染色单体可以互换、同源染色体分离移向两极
+        confusion: 互换发生在四分体的“非姐妹”染色单体之间——姐妹染色单体是复制关系，不是互换的对象
+        source: {textbook: P18-27, curriculum: 3.2.1}
+      - id: kp_fertilization
+        display: 受精作用
+        aliases: [精细胞, 卵细胞]
+        type: concept
+        l1: 能说出受精作用是精子和卵细胞结合成为受精卵的过程
+        l2: 能说明进行有性生殖的生物体，其遗传信息通过配子传递给子代
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：精子与卵细胞结合形成受精卵——双亲的遗传信息通过配子传递给子代
+        pitfall: 配子中的染色体数目已经减半，受精后受精卵恢复到体细胞的数目——减数分裂和受精作用前后配合
+        confusion: 减数分裂产生的是精细胞或卵细胞，精子是精细胞变形后的产物
+        source: {textbook: P26-28, curriculum: 3.2.2}
+  - title: 基因在染色体上
+    nodes:
+      - id: kp_gene_on_chromosome
+        display: 基因在染色体上
+        aliases: [萨顿, 摩尔根]
+        type: concept
+        l1: 能说出萨顿提出的假说——基因和染色体的行为存在明显的平行关系，以及摩尔根用果蝇杂交实验证明了基因在染色体上
+        l2: 能用假说—演绎的思路说明摩尔根果蝇眼色杂交实验的推理过程
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：一条染色体上有许多个基因，基因在染色体上呈线性排列
+        pitfall: 摩尔根的果蝇实验是“假说—演绎”思路的又一经典应用——先解释现象再设计实验验证
+        confusion: 萨顿用的是“类比推理”提出假说，摩尔根用实验证明了基因在染色体上——两人贡献不同
+        source: {textbook: P29-33, curriculum: 3.2}
+  - title: 伴性遗传
+    nodes:
+      - id: kp_sex_linked
+        display: 伴性遗传
+        aliases: [色盲, 性染色体]
+        type: concept
+        l1: 能举例说出伴性遗传——控制性状的基因位于性染色体上，遗传上总是和性别相关联（如人类红绿色盲）
+        l2: 能分析红绿色盲等位于 X 染色体上的基因的传递特点，解释这类疾病为什么有的多发于男性
+        l3: 待补录：延伸不在本节点展开
+        example: 自编分析题：红绿色盲基因位于 X 染色体上——男性 X 染色体上只要有该基因就会表现色盲，这也是色盲患者中男性多于女性的原因
+        pitfall: 伴性遗传的基因在性染色体上，同样遵循孟德尔定律——但表现与性别关联，分析时要把性别一起写入
+        confusion: 色盲基因是隐性基因，位于 X 染色体上——别把它当成显性遗传或常染色体遗传
+        source: {textbook: P34-39, curriculum: 3.2.4}
+
+edges:
+  - [kp_meiosis, kp_fertilization, 同章衔接]
+  - [kp_fertilization, kp_gene_on_chromosome, 同章衔接]
+  - [kp_gene_on_chromosome, kp_sex_linked, 同章衔接]
+
+combo:
+  - [kp_meiosis, kp_segregation_law, 常考组合]
+  - [kp_meiosis, kp_free_combination, 常考组合]
+
+later:
+  - {id: bx2_ch3, display: 第三章 基因的本质}
