@@ -1,0 +1,87 @@
+# 必修1 第四章 细胞的物质输入和输出 —— 知识库唯一真相源
+chapter_id: bio-bx1-ch4
+subject: 生物
+book: 人教版《生物学 必修1 分子与细胞》（2019）
+book_short: bio-bx1
+chapter_no: 4
+chapter_title: 细胞的物质输入和输出
+canon_file: references/nodes/biology.md
+canon_chapter: 必修1 第四章 细胞的物质输入和输出
+graph_doc: references/pep-bio-bx1-ch4.md
+entry_question: 先学哪个节点：渗透作用、被动运输，还是主动运输？
+
+sections:
+  - title: 被动运输
+    nodes:
+      - id: kp_osmosis
+        display: 渗透作用
+        aliases: [半透膜, 渗透]
+        type: concept
+        l1: 能说出渗透作用是水分子（或其他溶剂分子）通过半透膜的扩散，方向是从水的相对含量高的一侧向低的一侧渗透
+        l2: 能说明发生渗透作用需要半透膜和膜两侧浓度差两个条件，并用它解释水的进出细胞
+        l3: 待补录：延伸不在本节点展开
+        example: 自编情境：把哺乳动物红细胞放入不同浓度的氯化钠溶液中，红细胞会因吸水或失水发生不同变化（教材图4-1）
+        pitfall: 渗透方向由“水的相对含量”决定——水从相对含量高的一侧向低的一侧渗透，别被溶质浓度的说法绕晕
+        confusion: “溶液浓度高”的一侧恰恰是“水相对含量低”的一侧——两种说法指的是同一个方向
+        source: {textbook: "P62-63 含图4-1", curriculum: 2.1}
+      - id: kp_plasmolysis
+        display: 质壁分离及复原
+        aliases: [质壁分离, 原生质层, 植物细胞的吸水和失水]
+        type: experiment
+        l1: 能说出原生质层包括细胞膜、液泡膜以及两层膜之间的细胞质，相当于半透膜；能描述植物细胞质壁分离与复原的现象
+        l2: 能运用渗透作用原理判断植物细胞在不同浓度外界溶液中的吸水与失水，并解释质壁分离及复原的原因
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：成熟植物细胞放在浓蔗糖溶液中失水，原生质层与细胞壁逐渐分开出现质壁分离；再移入清水则吸水复原
+        pitfall: 原生质层 = 细胞膜 + 液泡膜 + 两层膜之间的细胞质，不是只有细胞膜
+        confusion: 质壁分离时细胞壁基本不动、原生质层收缩——看到“分开”的是细胞壁与原生质层
+        source: {textbook: P63-66, curriculum: 2.1}
+      - id: kp_passive_transport
+        display: 被动运输
+        aliases: [自由扩散, 协助扩散, 通道蛋白, 载体蛋白]
+        type: concept
+        l1: 能举例说出被动运输分为自由扩散和协助扩散，都是顺浓度梯度进出细胞、不需要细胞额外提供能量的运输方式
+        l2: 能区分自由扩散与协助扩散——协助扩散需要转运蛋白协助；转运蛋白分为载体蛋白和通道蛋白两种类型，载体蛋白只容许与自身结合部位相适应的分子或离子通过
+        l3: 待补录：延伸不在本节点展开
+        example: 自编分类题：自由扩散与协助扩散的共同点是顺浓度梯度、不需要额外能量，区别是后者需要通道蛋白或载体蛋白协助
+        pitfall: 转运蛋白分为载体蛋白和通道蛋白两种类型；载体蛋白只容许与自身结合部位相适应的分子或离子通过
+        confusion: 判断被动运输看两点——顺浓度梯度、不需要额外能量；与是否需要转运蛋白无关
+        source: {textbook: P66-68, curriculum: 2.1.2}
+  - title: 主动运输与胞吞、胞吐
+    nodes:
+      - id: kp_active_transport
+        display: 主动运输
+        aliases: []
+        type: concept
+        l1: 能举例说出主动运输是逆浓度梯度进出细胞、需要载体蛋白协助并消耗能量的运输方式
+        l2: 能说明主动运输普遍存在于动植物和微生物细胞中，通过主动运输选择吸收所需要的物质、排出代谢废物和对细胞有害的物质，从而保证细胞和个体生命活动的需要
+        l3: 待补录：延伸不在本节点展开
+        example: 教材情境自编问答：甲状腺滤泡上皮细胞内碘浓度比血液中高 20~25 倍——细胞逆浓度梯度吸收碘，需要载体蛋白并消耗能量
+        pitfall: 主动运输两个条件缺一不可：载体蛋白和能量；ATP 水解为 ADP 和 Pi 时放能，供主动运输利用
+        confusion: 转运蛋白的种类和数量、转运蛋白空间结构的变化，是细胞膜具有选择透过性的结构基础
+        source: {textbook: P69-71, curriculum: "2.1.1、2.1.2"}
+      - id: kp_endocytosis_exocytosis
+        display: 胞吞和胞吐
+        aliases: [胞吞, 胞吐]
+        type: concept
+        l1: 能举例说出像蛋白质这样的生物大分子通过胞吞或胞吐进出细胞
+        l2: 能说明胞吞和胞吐的过程需要膜上蛋白质的参与，并结合教材图4-7 说明变形虫的胞吞与胞吐
+        l3: 待补录：延伸不在本节点展开
+        example: 自编读图题：变形虫既能通过胞吞摄取食物，又能通过胞吐排出废物（教材图4-7）；痢疾内变形虫吞噬人体细胞属于胞吞
+        pitfall: 像蛋白质这样的生物大分子不能直接穿过细胞膜，只能通过胞吞或胞吐进出细胞，过程需要膜上蛋白质的参与
+        confusion: 胞吞是“进去”、胞吐是“排出”——痢疾内变形虫吞噬人体细胞属于胞吞
+        source: {textbook: P72-73, curriculum: 2.1.3}
+
+edges:
+  - [kp_osmosis, kp_plasmolysis, 同章衔接]
+  - [kp_plasmolysis, kp_passive_transport, 同章衔接]
+  - [kp_passive_transport, kp_active_transport, 同章衔接]
+  - [kp_active_transport, kp_endocytosis_exocytosis, 同章衔接]
+
+combo:
+  - [kp_cell_membrane_functions, kp_passive_transport, 常考组合]
+  - [kp_fluid_mosaic, kp_endocytosis_exocytosis, 常考组合]
+  - [kp_active_transport, bx1_ch5, 常考组合]
+
+later:
+  - {id: bx1_ch5, display: 第五章 细胞的能量供应和利用}
+  - {id: bx1_ch6, display: 第六章 细胞的生命历程}
