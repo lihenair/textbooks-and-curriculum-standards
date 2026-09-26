@@ -3,4 +3,11 @@
 # validate.sh --repo <high repo> --chapter chem-bx1-ch1 [--target high-school-ai-tutor]
 set -euo pipefail
 root="$(cd "$(dirname "$0")" && pwd)"
-exec python3 "$root/core/validate.py" --pipeline-root "$root" "$@"
+if [ -n "${VIRTUAL_ENV:-}" ] && [ -x "$VIRTUAL_ENV/bin/python" ]; then
+  PY="$VIRTUAL_ENV/bin/python"
+elif [ -x "$HOME/.venvs/kb-pipeline/bin/python" ]; then
+  PY="$HOME/.venvs/kb-pipeline/bin/python"
+else
+  PY=python3
+fi
+exec "$PY" "$root/core/validate.py" --pipeline-root "$root" "$@"

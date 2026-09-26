@@ -11,6 +11,13 @@ import ast
 import sys
 from pathlib import Path
 
+import sys as _sys
+from pathlib import Path as _Path
+
+_ROOT = _Path(__file__).resolve().parent.parent
+if str(_ROOT) not in _sys.path:
+    _sys.path.insert(0, str(_ROOT))
+
 from core.adapter import load_adapter, path_map
 from core.library import SeedEdge, SeedNode, Seeds
 from core.render import render
