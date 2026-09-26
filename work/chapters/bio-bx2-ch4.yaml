@@ -1,0 +1,73 @@
+# 必修2 第四章 基因的表达 —— 知识库唯一真相源
+chapter_id: bio-bx2-ch4
+subject: 生物
+book: 人教版《生物学 必修2 遗传与进化》（2019）
+book_short: bio-bx2
+chapter_no: 4
+chapter_title: 基因的表达
+canon_file: references/nodes/biology.md
+canon_chapter: 必修2 第四章 基因的表达
+graph_doc: references/pep-bio-bx2-ch4.md
+entry_question: 先学哪个节点：基因指导蛋白质的合成、中心法则，还是基因表达与性状的关系？
+
+sections:
+  - title: 基因指导蛋白质的合成
+    nodes:
+      - id: kp_transcription_translation
+        display: 基因指导蛋白质的合成
+        aliases: [转录, 翻译, 密码子]
+        type: concept
+        l1: 能概述转录——通过 RNA 聚合酶以 DNA 的一条链为模板合成 mRNA——和翻译的过程
+        l2: 能说出 mRNA 上决定一个氨基酸的 3 个相邻碱基叫作密码子，tRNA 搬运氨基酸、其反密码子与密码子互补配对，翻译在核糖体上进行
+        l3: 待补录：延伸不在本节点展开
+        example: 自编流向题：遗传信息从 DNA 转录到 mRNA，再从 mRNA 翻译成蛋白质——信息流向是 DNA→RNA→蛋白质
+        pitfall: 转录的模板是 DNA 的一条链、产物是 mRNA；翻译在核糖体上进行，tRNA 负责搬运氨基酸
+        confusion: 密码子在 mRNA 上、反密码子在 tRNA 上——两者互补配对但所在位置不同
+        source: {textbook: P64-70, curriculum: 3.1.4}
+      - id: kp_central_dogma
+        display: 中心法则
+        aliases: []
+        type: concept
+        l1: 能说出中心法则描述了遗传信息从 DNA 流向 RNA、再从 RNA 流向蛋白质的一般规律
+        l2: 能说明中心法则提出后不断得到补充和完善，体现了科学认识的发展历程
+        l3: 待补录：延伸不在本节点展开
+        example: 自绘图示：DNA 复制、转录、翻译是中心法则的基本内容——遗传信息的传递和表达各有通路
+        pitfall: 中心法则描述的是遗传信息的传递规律，不是物质变化本身
+        confusion: 中心法则随着研究不断补充完善——科学结论不是一成不变的
+        source: {textbook: P68-70, curriculum: 3.1.4}
+  - title: 基因表达与性状的关系
+    nodes:
+      - id: kp_gene_expression_trait
+        display: 基因表达与性状的关系
+        aliases: [基因的选择性表达]
+        type: concept
+        l1: 能举例说明基因通过控制蛋白质的结构直接控制生物性状，或通过控制酶的合成来控制代谢进而间接控制生物性状
+        l2: 能说明细胞分化的本质是基因的选择性表达，生物的性状主要通过蛋白质表现
+        l3: 待补录：延伸不在本节点展开
+        example: 自编教材实例：皱粒豌豆的形成机制——淀粉分支酶的基因异常导致淀粉含量减少、豌豆成熟后皱缩（图4-9）
+        pitfall: 同一生物体的不同类型细胞遗传信息相同，但基因的选择性表达不同——所以红细胞和白细胞形态功能不同
+        confusion: 基因与性状并不是简单的一一对应关系——一个性状可以受多个基因影响，一个基因也可以影响多个性状
+        source: {textbook: P71-75, curriculum: 3.1.4}
+      - id: kp_epigenetics
+        display: 表观遗传
+        aliases: []
+        type: concept
+        l1: 能举例说出某些基因中碱基序列不变但表型改变的表观遗传现象
+        l2: 能说明表观遗传信息能够调控基因表达，表观遗传的改变有的可以遗传给后代
+        l3: 待补录：延伸不在本节点展开
+        example: 自编教材实例：柳穿鱼的花存在对称花与不对称花两种形态——基因的碱基序列相同，表型却不同
+        pitfall: 表观遗传中基因的碱基序列没有改变，但表型改变了——生物体的基因组成相同也可能表型不同
+        confusion: 表观遗传的变化有的可以遗传给后代——“可遗传”并不只指 DNA 序列发生改变
+        source: {textbook: P76-78, curriculum: 3.1.5}
+
+edges:
+  - [kp_transcription_translation, kp_central_dogma, 同章衔接]
+  - [kp_central_dogma, kp_gene_expression_trait, 同章衔接]
+  - [kp_gene_expression_trait, kp_epigenetics, 同章衔接]
+
+combo:
+  - [kp_transcription_translation, kp_proteins, 常考组合]
+  - [kp_gene_expression_trait, kp_cell_differentiation, 常考组合]
+
+later:
+  - {id: bx2_ch5, display: 第五章 基因突变及其他变异}

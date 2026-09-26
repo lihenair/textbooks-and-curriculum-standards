@@ -98,6 +98,9 @@ def _missing_formal(adapter, mapped, chapter: str, ordered: list[str]) -> list[s
     else:
         return []
     formal = [node.id for node in seeds.nodes if node.chapter_id == chapter and not node.grey]
+    if not formal:
+        print(f"种子里没有章 {chapter} 的正式节点——先 scaffold 入库再 validate", file=sys.stderr)
+        return ["该章未入库"]
     return [node_id for node_id in formal if node_id not in ordered]
 
 
