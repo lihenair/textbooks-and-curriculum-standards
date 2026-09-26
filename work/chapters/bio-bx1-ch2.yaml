@@ -1,0 +1,128 @@
+# 必修1 第二章 组成细胞的分子 —— 知识库唯一真相源
+chapter_id: bio-bx1-ch2
+subject: 生物
+book: 人教版《生物学 必修1 分子与细胞》（2019）
+book_short: bio-bx1
+chapter_no: 2
+chapter_title: 组成细胞的分子
+canon_file: references/nodes/biology.md
+canon_chapter: 必修1 第二章 组成细胞的分子
+graph_doc: references/pep-bio-bx1-ch2.md
+entry_question: 先学哪个节点：元素和化合物、水与无机盐，还是蛋白质？
+
+sections:
+  - title: 细胞中的元素和化合物
+    nodes:
+      - id: kp_elements
+        display: 组成细胞的元素
+        aliases: [大量元素, 微量元素, 基本元素]
+        type: concept
+        l1: 能说出细胞主要由 C、H、O、N、P、S 等元素构成，并区分大量元素与微量元素
+        l2: 能说明 C 是最基本元素——生物大分子以碳链为骨架
+        l3: 待补录：延伸不在本节点展开
+        example: 自编对比：细胞鲜重中 O 含量最多，干重中 C 含量最多——干重鲜重之别是选择题常见陷阱
+        pitfall: “最基本元素”是 C（碳链骨架），鲜重“含量最多”的是 O——两种问法答案不同
+        confusion: 大量元素与微量元素按含量划分，不按重要性划分；缺微量元素（如 Fe）照样出大病
+        source: {textbook: P16-18, curriculum: 1.1.1}
+      - id: kp_biomass_detection
+        display: 检测生物组织中的有机物
+        aliases: [斐林试剂, 双缩脲试剂, 苏丹III, 还原糖检测]
+        type: experiment
+        l1: 能说出检测还原糖、脂肪、蛋白质分别用斐林试剂、苏丹III染液、双缩脲试剂，以及对应的颜色反应
+        l2: 能完成实验操作并解释条件差异——斐林试剂需水浴加热，双缩脲反应不加热
+        l3: 待补录：延伸不在本节点展开
+        example: 自编实验题：梨汁加斐林试剂水浴加热出现砖红色沉淀；豆浆加双缩脲试剂变紫色；花生子叶切片加苏丹III染成橘黄色
+        pitfall: 斐林试剂甲液乙液现混现用且必须水浴加热；双缩脲试剂先加 A 液再加 B 液、不加热
+        confusion: 斐林试剂和双缩脲试剂成分都含 CuSO₄ 与 NaOH，但浓度和用法不同，颜色反应也不同
+        source: {textbook: P18-19, curriculum: 模块1教学提示·活动建议}
+  - title: 细胞中的无机物
+    nodes:
+      - id: kp_water
+        display: 细胞中的水
+        aliases: [自由水, 结合水]
+        type: concept
+        l1: 能指出水约占细胞重量的 2/3，并区分自由水和结合水
+        l2: 能说明自由水与结合水的比值变化如何影响代谢强弱与抗逆性（如种子晾晒、越冬）
+        l3: 待补录：延伸不在本节点展开
+        example: 自编情境：晒干的种子自由水少、代谢弱，能久存；越冬植物结合水比例上升、抗寒性增强
+        pitfall: 自由水参与代谢、结合水是结构成分——“代谢越旺盛自由水占比越高”要会反过来推
+        confusion: 同一细胞内两种水可相互转化，不是两种不同的水
+        source: {textbook: P20-21, curriculum: 1.1.2}
+      - id: kp_inorganic_salts
+        display: 细胞中的无机盐
+        aliases: [无机盐]
+        type: concept
+        l1: 能以离子形式说出无机盐在细胞中的存在方式，并举例说出它与生命活动密切相关
+        l2: 能用具体实例说明无机盐的功能（构成化合物、维持生命活动、维持酸碱平衡）
+        l3: 待补录：延伸不在本节点展开
+        example: 自编病例链接：缺 Fe 血红蛋白合成不足导致缺铁性贫血；哺乳动物血钙过低出现抽搐
+        pitfall: 无机盐大多以离子形式存在，少数构成重要化合物——Fe 构成血红蛋白、Mg 构成叶绿素、Ca 构成骨骼牙齿
+        confusion: “含量少”不等于“不重要”，微量元素和无机盐都遵循这一点
+        source: {textbook: P21-22, curriculum: 1.1.3}
+  - title: 细胞中的糖类和脂质
+    nodes:
+      - id: kp_sugars
+        display: 糖类
+        aliases: [还原糖, 单糖, 二糖, 多糖, 淀粉, 糖原]
+        type: concept
+        l1: 能概述糖类的分类（单糖、二糖、多糖）并各举出代表物
+        l2: 能说明糖类既是细胞的结构成分又是主要能源物质，并区分淀粉、糖原、纤维素的功能
+        l3: 待补录：延伸不在本节点展开
+        example: 自编归类题：葡萄糖（单糖）、蔗糖（二糖）、淀粉（植物储能多糖）、糖原（动物储能多糖）、纤维素（植物细胞壁结构多糖）
+        pitfall: 纤维素是多糖但不是能源物质，是植物细胞壁的结构成分，人体不能消化它
+        confusion: 还原糖（葡萄糖、果糖、麦芽糖）能与斐林试剂反应，蔗糖不是还原糖
+        source: {textbook: P23-25, curriculum: 1.1.4}
+      - id: kp_lipids
+        display: 脂质
+        aliases: [脂肪, 磷脂, 固醇]
+        type: concept
+        l1: 能举例说出脂肪、磷脂、固醇三类脂质在细胞中的作用
+        l2: 能说明不同脂质分别对维持细胞结构和功能的作用——脂肪储能、磷脂构成膜、固醇调节代谢
+        l3: 待补录：延伸不在本节点展开
+        example: 自编对应题：鸭子皮下厚脂肪御寒储能（脂肪）、细胞膜的基本骨架（磷脂）、性激素调节发育（固醇）
+        pitfall: 脂肪是良好的储能物质，但“主要能源物质”是糖类——两个说法不能混
+        confusion: 固醇是一类，包括胆固醇、性激素、维生素 D 三种，别只答胆固醇
+        source: {textbook: P25-26, curriculum: 1.1.5}
+  - title: 蛋白质是生命活动的主要承担者
+    nodes:
+      - id: kp_proteins
+        display: 蛋白质
+        aliases: [氨基酸, 肽键, 多肽]
+        type: concept
+        l1: 能说出氨基酸的结构特点——至少一个氨基和一个羧基连在同一个碳原子上——以及构成蛋白质的氨基酸约 20 种
+        l2: 能阐明氨基酸经脱水缩合形成肽链，蛋白质功能取决于氨基酸序列及其形成的空间结构，细胞的功能主要由蛋白质完成
+        l3: 待补录：延伸不在本节点展开
+        example: 自编计算题：n 个氨基酸脱水缩合成 1 条肽链，脱去 n−1 个水、形成 n−1 个肽键；形成 2 条肽链则各为 n−2
+        pitfall: 氨基酸的种类由 R 基决定；脱水缩合中脱去的水分子数 = 肽键数 = 氨基酸数 − 肽链条数
+        confusion: 蛋白质变性是空间结构被破坏，肽键不断裂；盐析可逆、高温变性不可逆
+        source: {textbook: P28-32, curriculum: 1.1.6}
+  - title: 核酸是遗传信息的携带者
+    nodes:
+      - id: kp_nucleic_acids
+        display: 核酸
+        aliases: [DNA, RNA, 核苷酸, 脱氧核糖核酸, 核糖核酸]
+        type: concept
+        l1: 能概述核酸由核苷酸聚合而成，是储存与传递遗传信息的生物大分子
+        l2: 能区分 DNA 与 RNA 的基本单位，并说出真核细胞中 DNA 主要分布在细胞核、RNA 主要分布在细胞质
+        l3: 待补录：延伸不在本节点展开
+        example: 自编对比：DNA 的基本单位是脱氧核糖核苷酸，RNA 的基本单位是核糖核苷酸；甲基绿使 DNA 呈绿色、吡罗红使 RNA 呈红色
+        pitfall: 核酸只有 DNA 和 RNA 两类，“核酸”不等于“DNA”；所有细胞生物同时含 DNA 和 RNA
+        confusion: 染色体上主要是 DNA，但细胞质中的线粒体、叶绿体也含 DNA——“DNA 主要在细胞核”不等于“只在细胞核”
+        source: {textbook: P34-37, curriculum: 1.1.7}
+
+edges:
+  - [kp_elements, kp_biomass_detection, 同章衔接]
+  - [kp_biomass_detection, kp_water, 同章衔接]
+  - [kp_water, kp_inorganic_salts, 同章衔接]
+  - [kp_inorganic_salts, kp_sugars, 同章衔接]
+  - [kp_sugars, kp_lipids, 同章衔接]
+  - [kp_lipids, kp_proteins, 同章衔接]
+  - [kp_proteins, kp_nucleic_acids, 同章衔接]
+
+combo:
+  - [kp_biomass_detection, kp_proteins, 常考组合]
+  - [kp_nucleic_acids, bx1_ch3, 常考组合]
+
+later:
+  - {id: bx1_ch3, display: 第三章 细胞的基本结构}
+  - {id: bx1_ch4, display: 第四章 细胞的能量供应和利用}
