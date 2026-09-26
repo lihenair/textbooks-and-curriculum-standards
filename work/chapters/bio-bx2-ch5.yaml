@@ -1,0 +1,75 @@
+# 必修2 第五章 基因突变及其他变异 —— 知识库唯一真相源
+chapter_id: bio-bx2-ch5
+subject: 生物
+book: 人教版《生物学 必修2 遗传与进化》（2019）
+book_short: bio-bx2
+chapter_no: 5
+chapter_title: 基因突变及其他变异
+canon_file: references/nodes/biology.md
+canon_chapter: 必修2 第五章 基因突变及其他变异
+graph_doc: references/pep-bio-bx2-ch5.md
+entry_question: 先学哪个节点：基因突变、基因重组，还是染色体变异和人类遗传病？
+
+sections:
+  - title: 基因突变和基因重组
+    nodes:
+      - id: kp_gene_mutation
+        display: 基因突变
+        aliases: [镰状细胞贫血]
+        type: concept
+        l1: 能举例说出碱基的替换、插入或缺失会引发基因中碱基序列的改变（如镰状细胞贫血）
+        l2: 能阐明碱基序列的改变有可能导致它所编码的蛋白质及相应的细胞功能发生变化甚至致命；能说出某些化学物质、射线和病毒会提高基因突变的概率，某些基因突变能导致细胞分裂失控甚至癌变
+        l3: 待补录：延伸不在本节点展开
+        example: 教材实例自编题：镰状细胞贫血（也叫镰刀型细胞贫血症）是一种遗传病——血红蛋白基因改变使红细胞形态异常
+        pitfall: 基因突变改变的是基因的碱基序列（基因结构），染色体数目和结构并没有变化——与染色体变异区分开
+        confusion: 某些化学物质、射线以及病毒会提高基因突变的概率；某些基因突变能导致细胞分裂失控，甚至发生癌变
+        source: {textbook: "P80-83", curriculum: "3.3.1、3.3.2、3.3.3"}
+      - id: kp_gene_recombination
+        display: 基因重组
+        aliases: []
+        type: concept
+        l1: 能说出基因重组是指在生物进行有性生殖的过程中，控制不同性状的基因的重新组合
+        l2: 能阐明减数分裂过程中染色体的自由组合和交叉互换会导致控制不同性状的基因重组，从而使子代出现变异
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：非同源染色体自由组合、同源染色体的非姐妹染色单体交叉互换——基因重组的两种来源（呼应第二章减数分裂）
+        pitfall: 基因重组不产生新的基因，只是原有基因的重新组合——这是它与基因突变的本质区别
+        confusion: 基因重组发生在有性生殖的减数分裂过程中——与基因突变、染色体变异同属可遗传变异，但来源不同
+        source: {textbook: "P83-86", curriculum: 3.3.4}
+  - title: 染色体变异
+    nodes:
+      - id: kp_chromosome_variation
+        display: 染色体变异
+        aliases: [染色体组, 多倍体, 单倍体, 猫叫综合征]
+        type: concept
+        l1: 能举例说出染色体结构的变异（如猫叫综合征）和数量的变异（染色体组、多倍体、单倍体）
+        l2: 能说明染色体结构和数量的变异都可能导致生物性状的改变甚至死亡，并说出染色体组的概念
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：猫叫综合征与染色体结构变异有关；多倍体植株常常茎秆粗壮、叶片果实较大
+        pitfall: 一个染色体组是细胞中的一组非同源染色体——形态和功能各不相同，但携带着控制生物生长发育的全部遗传信息
+        confusion: 单倍体是体细胞中含有本物种配子染色体数目的个体——单倍体不一定只含一个染色体组
+        source: {textbook: "P87-91", curriculum: 3.3.5}
+  - title: 人类遗传病
+    nodes:
+      - id: kp_human_genetic_disease
+        display: 人类遗传病
+        aliases: [遗传咨询, 产前诊断]
+        type: concept
+        l1: 能举例说出人类遗传病的类型——单基因遗传病、多基因遗传病和染色体异常遗传病
+        l2: 能举例说明人类遗传病可以通过遗传咨询和产前诊断等进行检测和预防
+        l3: 待补录：延伸不在本节点展开
+        example: 自编措施链：遗传咨询 → 产前诊断 → 依结果采取措施——体现“人类遗传病是可以检测和预防的”
+        pitfall: 人类遗传病分为单基因遗传病、多基因遗传病和染色体异常遗传病——先分清类型再谈检测和预防
+        confusion: 遗传病不都是一出生就表现症状的——有的要到个体发育的一定阶段才表现出来
+        source: {textbook: "P92-95", curriculum: 3.3.6}
+
+edges:
+  - [kp_gene_mutation, kp_gene_recombination, 同章衔接]
+  - [kp_gene_recombination, kp_chromosome_variation, 同章衔接]
+  - [kp_chromosome_variation, kp_human_genetic_disease, 同章衔接]
+
+combo:
+  - [kp_gene_mutation, kp_dna_replication, 常考组合]
+  - [kp_gene_recombination, kp_meiosis, 常考组合]
+
+later:
+  - {id: bx2_ch6, display: 第六章 生物的进化}
