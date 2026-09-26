@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 
-CHAPTER_RE = re.compile(r"^第[0-9一二三四五六七八九十百零〇两]+章[^\n]*")
+CHAPTER_RE = re.compile(r"^第\s*([0-9一二三四五六七八九十百零〇两]+)\s*章([^\n]*)")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -49,6 +49,26 @@ def extract_pages(pdf: Path) -> list[str]:
     return [page.extract_text() or "" for page in reader.pages]
 
 
+_CN_DIGITS = {"零": 0, "〇": 0, "两": 2, "一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9}
+
+
+def cn_to_int(text: str) -> int:
+    """解析一到九十九的中文数字；阿拉伯数字直接转。解析不了返回 0。"""
+    text = text.strip()
+    if text.isdigit():
+        return int(text)
+    if not text or any(ch not in _CN_DIGITS and ch != "十" for ch in text):
+        return 0
+    if text == "十":
+        return 10
+    if "十" in text:
+        left, _, right = text.partition("十")
+        tens = _CN_DIGITS.get(left, 1) if left else 1
+        ones = _CN_DIGITS.get(right, 0) if right else 0
+        return tens * 10 + ones
+    return _CN_DIGITS.get(text, 0)
+
+
 def write_extract(out: Path, pages: list[str]) -> None:
     page_dir = out / "pages"
     chapter_dir = out / "chapters"
@@ -57,6 +77,7 @@ def write_extract(out: Path, pages: list[str]) -> None:
     toc: list[str] = []
     chapters: list[tuple[str, int, list[str]]] = []
     current_title = ""
+    current_numeral = ""
     current_start = 1
     current_lines: list[str] = []
     for index, text in enumerate(pages, 1):
@@ -73,9 +94,23 @@ def write_extract(out: Path, pages: list[str]) -> None:
                 if current_title:
                     current_lines.append(line)
                 continue
+            stripped = line.strip()
+            if "..." in stripped or "．．" in stripped:
+                continue
+            if re.search(r"章\s*第", stripped):
+                continue
+            numeral = heading.group(1)
+            if current_numeral == numeral:
+                continue
+            value = cn_to_int(numeral)
+            previous = cn_to_int(current_numeral)
+            if previous and value != previous + 1:
+                toc.append(f"第 {index} 页\t（跳过，疑似页眉或引文）{stripped}")
+                continue
             if current_title:
                 chapters.append((current_title, current_start, current_lines))
-            current_title = heading.group(0).strip()
+            current_numeral = numeral
+            current_title = stripped
             current_start = index
             current_lines = [line]
             toc.append(f"第 {index} 页\t{current_title}")
