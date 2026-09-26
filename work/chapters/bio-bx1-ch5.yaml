@@ -52,7 +52,7 @@ sections:
     nodes:
       - id: kp_aerobic_respiration
         display: 有氧呼吸
-        aliases: [细胞呼吸]
+        aliases: []
         type: concept
         l1: 能说出有氧呼吸的主要场所是线粒体，并概述其三个阶段——第一阶段在细胞质基质中进行，葡萄糖分解成丙酮酸
         l2: 能阐明有氧呼吸将储存在有机物中的能量转化为生命活动可以利用的能量，实现能量的逐步释放
