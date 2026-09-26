@@ -161,3 +161,15 @@ python3 scripts/drift_check.py --target high-school-ai-tutor
 `migrate_seeds.py` 把内联 `SEED_NODES` / `SEED_EDGES` 抽到 `data/graph-seeds.py`，`graph.py init` 改为读这个文件，缺文件就非零退出。已经迁过的仓库再跑是空操作。在当前 `origin/main`（`53b875b`）上迁完之后，种子 SQL dump 与原 `graph.db` 一致，`tests/check.py` 通过，`tests/run.sh` 为 32/32。公开仓库上的这次改动需要单独提交；在那之前，`scaffold.py --apply` 会拒绝写入。
 
 每周 workflow（`.github/workflows/drift.yml`）在定时和手动触发时克隆 high repo、推进 ref、跑三道机检、重生成。push / pull request 上先跑单测和 stub 空跑。空跑证明三件事：能 `fetch` 并钉新 ref、基线 `validate` 能绿、文本 diff 非空会红灯；基线变红时 ref 留在上一块 last-green。
+
+## 9. 家庭使用与讲解协议（家长与孩子约定，2026-09-26）
+
+1. 孩子提问，讲解必须给出依据：教材页码 + 课标条目号，原文在 `work/raw/` 可当场对照。
+2. 孩子说"不对"：先记录争议、文件不动；出示依据让他对比分析。确认知识库错了才改 yaml 重生成；
+   确认孩子错了，原始说法记入反馈环（records raw），下次换角度讲。
+3. 还没讲的（课内未学）：正常讲解，依据注明所属章节与页码，提示学校进度。
+4. 问题模糊：先对齐到课标条目或教材某节，讲清"这个问题的准确范围"再作答。
+5. 超纲内容：可用大学/竞赛教材讲解，深度以回答问题为限，并明示"这超纲了"。
+   引用分两档：书未入库时只报书名+版次+章节，页码标"待核对"，禁止凭记忆编页码；
+   书的电子版放入 `work/raw/extension/<书名>/` 并经 extract.py 建索引后，页码引用才可落死。
+6. 真相源永远是 yaml + 教材 + 课标 + 已入库的延伸书，不因任何一方口头说法单方面更新。
