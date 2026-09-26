@@ -1,0 +1,56 @@
+name: drift
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  self-check:
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 单测与 stub 空跑
+        run: python3 -m unittest discover -s tests -t . -v
+
+  weekly:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 推进 ref、基线机检、重生成
+        run: python3 scripts/drift_check.py --target high-school-ai-tutor
+
+      - name: 钉住新的绿 ref
+        run: |
+          git config user.name "kb-pipeline"
+          git config user.email "kb-pipeline@users.noreply.github.com"
+          git add targets/high-school-ai-tutor/target.yaml
+          if git diff --cached --quiet; then
+            echo "ref 没有变化"
+          else
+            git commit -m "chore: advance high-school-ai-tutor ref"
+            git push
+          fi

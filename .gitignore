@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.cache/
+work/raw/**
+!work/raw/.gitkeep
+work/snippets/**
+!work/snippets/.gitkeep
