@@ -95,5 +95,3 @@ combo:
   - [kp_mitosis, kp_nucleic_acids, 常考组合]
   - [kp_totipotency, kp_nucleus, 常考组合]
 
-later:
-  - {id: bio_bx2, display: 必修2《遗传与进化》}

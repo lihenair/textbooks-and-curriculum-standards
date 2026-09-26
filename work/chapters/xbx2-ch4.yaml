@@ -44,5 +44,3 @@ edges:
 combo:
   - [kp_biodiversity_protection, kp_coevolution_biodiversity, 常考组合]
 
-later:
-  - {id: bio_xbx3, display: 选择性必修3《生物技术与工程》}

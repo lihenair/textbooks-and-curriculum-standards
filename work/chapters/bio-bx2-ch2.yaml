@@ -70,6 +70,5 @@ edges:
 combo:
   - [kp_meiosis, kp_segregation_law, 常考组合]
   - [kp_meiosis, kp_free_combination, 常考组合]
+  - [kp_meiosis, kp_dna_replication, 常考组合]
 
-later:
-  - {id: bx2_ch3, display: 第三章 基因的本质}

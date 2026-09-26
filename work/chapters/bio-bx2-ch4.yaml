@@ -69,5 +69,3 @@ combo:
   - [kp_transcription_translation, kp_proteins, 常考组合]
   - [kp_gene_expression_trait, kp_cell_differentiation, 常考组合]
 
-later:
-  - {id: bx2_ch5, display: 第五章 基因突变及其他变异}

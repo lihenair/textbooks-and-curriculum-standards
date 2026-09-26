@@ -55,5 +55,3 @@ edges:
   - [kp_population_features, kp_population_change, 同章衔接]
   - [kp_population_change, kp_population_factors, 同章衔接]
 
-later:
-  - {id: xbx2_ch2, display: 第二章 群落及其演替}

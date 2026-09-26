@@ -133,6 +133,5 @@ combo:
   - [kp_atp, kp_aerobic_respiration, 常考组合]
   - [kp_organelles, kp_aerobic_respiration, 常考组合]
   - [kp_enzyme_properties, kp_photosynthesis_factors, 常考组合]
+  - [kp_photosynthesis_principle, kp_aerobic_respiration, 常考组合]
 
-later:
-  - {id: bx1_ch6, display: 第六章 细胞的生命历程}

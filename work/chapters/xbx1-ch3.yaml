@@ -57,6 +57,5 @@ edges:
 
 combo:
   - [kp_hormone_process, kp_internal_env_properties, 常考组合]
+  - [kp_hormone_process, kp_aerobic_respiration, 常考组合]
 
-later:
-  - {id: xbx1_ch4, display: 第四章 免疫调节}

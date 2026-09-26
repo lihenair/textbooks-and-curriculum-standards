@@ -71,5 +71,3 @@ combo:
   - [kp_gene_mutation, kp_dna_replication, 常考组合]
   - [kp_gene_recombination, kp_meiosis, 常考组合]
 
-later:
-  - {id: bx2_ch6, display: 第六章 生物的进化}

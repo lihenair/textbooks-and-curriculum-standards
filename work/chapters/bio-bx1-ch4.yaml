@@ -80,8 +80,5 @@ edges:
 combo:
   - [kp_cell_membrane_functions, kp_passive_transport, 常考组合]
   - [kp_fluid_mosaic, kp_endocytosis_exocytosis, 常考组合]
-  - [kp_active_transport, bx1_ch5, 常考组合]
+  - [kp_active_transport, kp_aerobic_respiration, 常考组合]
 
-later:
-  - {id: bx1_ch5, display: 第五章 细胞的能量供应和利用}
-  - {id: bx1_ch6, display: 第六章 细胞的生命历程}

@@ -78,8 +78,5 @@ edges:
 
 combo:
   - [kp_cell_theory, kp_prokaryote_eukaryote, 常考组合]
-  - [kp_prokaryote_eukaryote, bx1_ch3, 常考组合]
+  - [kp_prokaryote_eukaryote, kp_nucleus, 常考组合]
 
-later:
-  - {id: bx1_ch2, display: 第二章 组成细胞的分子}
-  - {id: bx1_ch3, display: 第三章 细胞的基本结构}

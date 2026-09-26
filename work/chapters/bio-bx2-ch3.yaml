@@ -73,5 +73,3 @@ combo:
   - [kp_dna_structure, kp_nucleic_acids, 常考组合]
   - [kp_dna_replication, kp_mitosis, 常考组合]
 
-later:
-  - {id: bx2_ch4, display: 第四章 基因的表达}

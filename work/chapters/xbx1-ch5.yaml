@@ -72,5 +72,3 @@ edges:
 combo:
   - [kp_auxin_discovery, kp_environment_plant, 常考组合]
 
-later:
-  - {id: bio_xbx2, display: 选择性必修2《生物与环境》}

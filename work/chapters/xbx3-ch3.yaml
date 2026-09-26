@@ -73,5 +73,3 @@ combo:
   - [kp_recombinant_dna_tools, kp_dna_structure, 常考组合]
   - [kp_gene_engineering_procedure, kp_secretory_protein, 常考组合]
 
-later:
-  - {id: xbx3_ch4, display: 第四章 生物技术的安全性与伦理问题}

@@ -84,6 +84,5 @@ edges:
 combo:
   - [kp_natural_selection_adaptation, kp_gene_mutation, 常考组合]
   - [kp_population_gene_frequency, kp_mendel_methods, 常考组合]
+  - [kp_gene_mutation, kp_natural_selection_adaptation, 常考组合]
 
-later:
-  - {id: bio_xbx1, display: 选择性必修1《稳态与调节》}

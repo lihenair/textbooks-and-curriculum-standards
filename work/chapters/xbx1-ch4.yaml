@@ -71,6 +71,6 @@ edges:
 
 combo:
   - [kp_specific_immunity, kp_hormone_process, 常考组合]
+  - [kp_specific_immunity, kp_proteins, 常考组合]
+  - [kp_immune_system, kp_homeostasis, 常考组合]
 
-later:
-  - {id: xbx1_ch5, display: 第五章 植物生命活动的调节}

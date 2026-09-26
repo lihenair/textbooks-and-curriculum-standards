@@ -55,5 +55,3 @@ edges:
   - [kp_community_structure, kp_community_types, 同章衔接]
   - [kp_community_types, kp_ecological_succession, 同章衔接]
 
-later:
-  - {id: xbx2_ch3, display: 第三章 生态系统及其稳定性}

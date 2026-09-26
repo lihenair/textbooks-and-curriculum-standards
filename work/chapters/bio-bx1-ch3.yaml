@@ -116,10 +116,7 @@ edges:
   - [kp_biomembrane_system, kp_nucleus, 同章衔接]
 
 combo:
-  - [kp_fluid_mosaic, bx1_ch4, 常考组合]
+  - [kp_fluid_mosaic, kp_active_transport, 常考组合]
   - [kp_organelles, kp_proteins, 常考组合]
   - [kp_nucleus, kp_nucleic_acids, 常考组合]
 
-later:
-  - {id: bx1_ch4, display: 第四章 细胞的物质输入和输出}
-  - {id: bx1_ch5, display: 第五章 细胞的能量供应和利用}

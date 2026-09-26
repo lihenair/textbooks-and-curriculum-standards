@@ -86,6 +86,5 @@ edges:
 combo:
   - [kp_energy_flow, kp_photosynthesis_principle, 常考组合]
   - [kp_ecosystem_stability, kp_homeostasis, 常考组合]
+  - [kp_energy_flow, kp_aerobic_respiration, 常考组合]
 
-later:
-  - {id: xbx2_ch4, display: 第四章 人与环境}
