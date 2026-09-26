@@ -1,0 +1,77 @@
+# 必修2 第三章 基因的本质 —— 知识库唯一真相源
+chapter_id: bio-bx2-ch3
+subject: 生物
+book: 人教版《生物学 必修2 遗传与进化》（2019）
+book_short: bio-bx2
+chapter_no: 3
+chapter_title: 基因的本质
+canon_file: references/nodes/biology.md
+canon_chapter: 必修2 第三章 基因的本质
+graph_doc: references/pep-bio-bx2-ch3.md
+entry_question: 先学哪个节点：DNA 是主要的遗传物质、DNA 的结构，还是 DNA 的复制？
+
+sections:
+  - title: DNA 是主要的遗传物质
+    nodes:
+      - id: kp_dna_genetic_material
+        display: DNA 是主要的遗传物质
+        aliases: [肺炎链球菌, 噬菌体, 遗传物质]
+        type: concept
+        l1: 能概述肺炎链球菌转化实验和噬菌体侵染细菌实验都证明了 DNA 是遗传物质
+        l2: 能说明“DNA 是主要的遗传物质”——多数生物的基因在 DNA 分子上，有些病毒的基因在 RNA 分子上
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：噬菌体侵染大肠杆菌时只有 DNA 注入细菌、蛋白质外壳留在外面——后代噬菌体的性状由 DNA 决定
+        pitfall: 噬菌体侵染实验的关键是只有 DNA 进入细菌、蛋白质外壳留在外面——这样就能单独观察 DNA 的作用
+        confusion: 少数病毒的遗传物质是 RNA——所以说 DNA 是“主要的”遗传物质，而不是“唯一的”
+        source: {textbook: P42-47, curriculum: 3.1.1}
+  - title: DNA 的结构
+    nodes:
+      - id: kp_dna_structure
+        display: DNA 的结构
+        aliases: [双螺旋, 碱基互补配对, 脱氧核苷酸]
+        type: concept
+        l1: 能说出 DNA 由四种脱氧核苷酸构成，两条链反向平行形成双螺旋结构
+        l2: 能阐明两条链上的碱基通过碱基互补配对原则（A-T、G-C）连接成碱基对，碱基的排列顺序编码了遗传信息
+        l3: 待补录：延伸不在本节点展开
+        example: 自编配对题：一条链上某位置是 A，另一条链的对应位置一定是 T——碱基互补配对
+        pitfall: DNA 分子中的碱基通过氢键连接成碱基对——A 与 T 配对、G 与 C 配对，配对方式是固定的
+        confusion: 沃森和克里克提出了 DNA 双螺旋结构模型——别把结构模型的提出者和别的科学家混淆
+        source: {textbook: P48-52, curriculum: 3.1.2}
+  - title: DNA 的复制
+    nodes:
+      - id: kp_dna_replication
+        display: DNA 的复制
+        aliases: [半保留复制]
+        type: concept
+        l1: 能概述 DNA 分子通过半保留方式进行复制——新形成的每个 DNA 分子都保留了原来 DNA 分子中的一条链
+        l2: 能说明复制需要模板、原料（4 种游离的脱氧核苷酸）、能量和酶等条件，复制使遗传信息从亲代传给子代
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：半保留复制形成的每个新 DNA 分子都含有一条原来的链和一条新合成的链
+        pitfall: 复制需要模板（两条母链）、原料（4 种游离的脱氧核苷酸）、能量和酶——条件缺一不可
+        confusion: 当年也提出过全保留复制等不同假说——最终半保留复制被实验证实
+        source: {textbook: P53-55, curriculum: 3.1.3}
+  - title: 基因通常是有遗传效应的 DNA 片段
+    nodes:
+      - id: kp_gene_dna_fragment
+        display: 基因通常是有遗传效应的 DNA 片段
+        aliases: [遗传效应, DNA 指纹]
+        type: concept
+        l1: 能说出基因通常是有遗传效应的 DNA 片段
+        l2: 能举例说出 DNA 指纹技术在刑事侦查等领域的应用——碱基排列顺序的特异性使 DNA 指纹具有个体特异性
+        l3: 待补录：延伸不在本节点展开
+        example: 自编：DNA 指纹可用于刑事侦查——每个人的 DNA 碱基排列顺序具有特异性
+        pitfall: 基因“通常”是有遗传效应的 DNA 片段——少数病毒的基因在 RNA 分子上，注意“通常”二字的分寸
+        confusion: 遗传信息蕴藏在碱基排列顺序之中——碱基顺序的特异性决定了 DNA 指纹可以识别个体
+        source: {textbook: P56-58, curriculum: 3.1.1}
+
+edges:
+  - [kp_dna_genetic_material, kp_dna_structure, 同章衔接]
+  - [kp_dna_structure, kp_dna_replication, 同章衔接]
+  - [kp_dna_replication, kp_gene_dna_fragment, 同章衔接]
+
+combo:
+  - [kp_dna_structure, kp_nucleic_acids, 常考组合]
+  - [kp_dna_replication, kp_mitosis, 常考组合]
+
+later:
+  - {id: bx2_ch4, display: 第四章 基因的表达}
