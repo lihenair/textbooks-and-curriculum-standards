@@ -1,7 +1,7 @@
 name: high-school-ai-tutor
 repo: https://github.com/lihenair/high-school-ai-tutor-skill.git
-ref: 53b875b1b439712eeda26bb437db38406565fd20
-last_green: 53b875b1b439712eeda26bb437db38406565fd20
+ref: 165de1540178e70361e790778049bd1fbe292d58
+last_green: 165de1540178e70361e790778049bd1fbe292d58
 baseline_chapter: chem-bx1-ch1
 skill_dir: skills/high-school-ai-tutor
 paths:

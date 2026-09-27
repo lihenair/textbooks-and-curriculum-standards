@@ -48,6 +48,12 @@ def run_validate(adapter, repo: Path, chapter: str) -> int:
         if completed.returncode != 0:
             print(f"机检失败：{' '.join(command)}", file=sys.stderr)
             return completed.returncode or 1
+    canon_sync = Path(repo) / str(adapter.config["skill_dir"]) / "scripts" / "canon_sync.py"
+    if canon_sync.is_file():
+        synced = subprocess.run([sys.executable, str(canon_sync)], cwd=repo, check=False)
+        if synced.returncode != 0:
+            print("canon_sync 对账失败", file=sys.stderr)
+            return synced.returncode or 1
     init = subprocess.run(
         [sys.executable, str(mapped["graph_script"]), "init", "--db", str(mapped["graph_db"])],
         cwd=repo,

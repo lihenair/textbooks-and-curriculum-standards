@@ -135,16 +135,18 @@ def plan(adapter, repo: Path, chapters: list[Chapter], pipeline_root: Path) -> t
 
 def _render_chapters(adapter, repo, chapters, seeds: Seeds, pipeline_root: Path) -> dict:
     per_chapter = []
-    canon_writes = []
+    canon_state: dict[Path, str] = {}
     for chapter in chapters:
         canon_path = _skill_path(adapter, repo, chapter.canon_file)
-        existing = canon_path.read_text(encoding="utf-8") if canon_path.exists() else ""
+        if canon_path not in canon_state:
+            canon_state[canon_path] = canon_path.read_text(encoding="utf-8") if canon_path.exists() else ""
         kept = outside_ids(canon_path, chapter.chapter_id)
         emitting = [node for node in chapter.nodes if node.id not in kept]
         block = ""
         if emitting:
             block = _canon_block(adapter, chapter, emitting)
-        canon_text = merge_canon(existing, chapter.chapter_id, block)
+        canon_state[canon_path] = merge_canon(canon_state[canon_path], chapter.chapter_id, block)
+        canon_text = canon_state[canon_path]
         graph_text = render(adapter.templates["chapter-graph.md"], _graph_context(chapter, {n.id: n.display for n in seeds.nodes}))
         pages = {}
         for node in chapter.nodes:
@@ -165,7 +167,6 @@ def _render_chapters(adapter, repo, chapters, seeds: Seeds, pipeline_root: Path)
             "formal_ids": [node.id for node in chapter.nodes],
             "later_ids": [item.id for item in chapter.later],
         })
-        canon_writes.append((canon_path, canon_text))
     seeds_text = render(adapter.templates["graph-seeds.py"], _seeds_context(seeds))
     if not seeds_text.endswith("\n"):
         seeds_text += "\n"

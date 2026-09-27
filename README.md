@@ -77,7 +77,7 @@ high-school-ai-tutor-skill/       # 公开 repo，本方案涉及的一次性变
 **③ 起草 chapter.yaml**（LLM 会话 + 你审，全流程核心）。规则在 `targets/high-school-ai-tutor/prompts/draft-chapter.md`。schema：
 
 ```yaml
-chapter_id: chem-bx1-ch2
+chapter_id: chem-bx1-ch2          # 必须带学科前缀（chem- / bio- / phy- / math-），与学习页目录、正典章号一致
 subject: 化学
 book: 人教版《化学 必修 第一册》（2019）
 book_short: chem-bx1
@@ -167,7 +167,7 @@ python3 core/feedback.py --repo <high repo 检出>
 python3 scripts/drift_check.py --target high-school-ai-tutor
 ```
 
-`migrate_seeds.py` 把内联 `SEED_NODES` / `SEED_EDGES` 抽到 `data/graph-seeds.py`，`graph.py init` 改为读这个文件，缺文件就非零退出。已经迁过的仓库再跑是空操作。在当前 `origin/main`（`53b875b`）上迁完之后，种子 SQL dump 与原 `graph.db` 一致，`tests/check.py` 通过，`tests/run.sh` 为 32/32。公开仓库上的这次改动需要单独提交；在那之前，`scaffold.py --apply` 会拒绝写入。
+`migrate_seeds.py` 把内联 `SEED_NODES` / `SEED_EDGES` 抽到 `data/graph-seeds.py`，`graph.py init` 改为读这个文件，缺文件就非零退出。已经迁过的仓库再跑是空操作。还没迁的检出上，`scaffold.py --apply` 会拒绝写入。当前钉住的 ref 在 `targets/high-school-ai-tutor/target.yaml`。
 
 每周 workflow（`.github/workflows/drift.yml`）在定时和手动触发时克隆 high repo、推进 ref、跑三道机检、重生成。push / pull request 上先跑单测和 stub 空跑。空跑证明三件事：能 `fetch` 并钉新 ref、基线 `validate` 能绿、文本 diff 非空会红灯；基线变红时 ref 留在上一块 last-green。
 
