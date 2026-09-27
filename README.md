@@ -165,7 +165,11 @@ python3 core/scaffold.py --all --repo <high repo 检出> --apply
 ./validate.sh --repo <high repo 检出> --chapter <id>
 python3 core/feedback.py --repo <high repo 检出>
 python3 scripts/drift_check.py --target high-school-ai-tutor
+.venv/bin/python3 scripts/gen_lecture.py <data.json> work/raw/生物/maps/lectures/<名>.html   # 讲义（七槽＋红金重点＋自测出处截图 ev）
+.venv/bin/python3 scripts/gen_mindmap.py <data.json> work/raw/生物/maps/<名>.html           # 树形思维导图（徽章＋原图折叠）
 ```
+
+**原图库与讲义产物**：五本人教生物教材的单图裁切在 `work/raw/生物/<书>/img/figs/`（图号、标题、印刷页、验收状态查 `work/raw/生物/figures-index.md`，299 幅）；章导图在 `work/raw/生物/maps/`，「导图＋讲义」合并页在 `maps/lectures/`。生成器数据 JSON 驱动，badges 值必须写数组。PDF 衍生物保持私有侧不入库。
 
 `migrate_seeds.py` 把内联 `SEED_NODES` / `SEED_EDGES` 抽到 `data/graph-seeds.py`，`graph.py init` 改为读这个文件，缺文件就非零退出。已经迁过的仓库再跑是空操作。在当前 `origin/main`（`53b875b`）上迁完之后，种子 SQL dump 与原 `graph.db` 一致，`tests/check.py` 通过，`tests/run.sh` 为 32/32。公开仓库上的这次改动需要单独提交；在那之前，`scaffold.py --apply` 会拒绝写入。
 
