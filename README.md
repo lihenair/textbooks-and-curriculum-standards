@@ -50,7 +50,7 @@ high-school-ai-tutor-skill/       # 公开 repo，本方案涉及的一次性变
 
 **纪律 4 · 生成物清单 + 行为级禁令。** 生成物 = 正典追加区、整章图、学习页、graph-seeds、graph.db；人写物 = SKILL.md 两行指针（人工贴入）与 pipeline 侧一切。正典是**混合文件**：策展区（如 ch1 的 14 行）人写、追加区生成；scaffold 对正典**只查重追加、永不重写既有行**；一切内容修改回 yaml → 重生成，high repo 侧禁止手改生成物——否则下次重生成会静默覆盖手改。
 
-**纪律 5 · work/ 拆分。** `raw/`（切片、摘录，gitignore，敏感物不出私有侧）与 `chapters/`（真相源，必须版本化）分开；ignore 整个 `work/` 会让真相源丢失历史。
+**纪律 5 · work/ 拆分 + 科目分层。** `raw/<科目>/<书>/`（切片、摘录，gitignore，敏感物不出私有侧）与 `chapters/<科目>/`（真相源，必须版本化）分开；scaffold --all 递归读取全部科目；新增一科时在两个目录下建该科目子目录即可，工具与 target 无需改动（target 是全科 tutor，canon 文件由每份 yaml 的 canon_file 字段指向）。ignore 整个 `work/` 会让真相源丢失历史。
 
 **纪律 6 · CI 首轮必做，且先自验证。** 每周定时：推进 ref → 基线机检 → demo 重生成 → 文本 `git diff --exit-code`。workflow 先写、先空跑（stub target），验证三件事：能推进 ref、能跑 validate、diff 非空能红灯——不等第二章才首跑。
 
