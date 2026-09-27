@@ -20,7 +20,13 @@ Obsidian ┘                                                        （pipeline 
 │   ├── extract.py                # PDF 切片（通用）
 │   ├── find_notes.py             # Obsidian 检索（通用）
 │   ├── ir.py                     # chapter.yaml 读写 + 通用校验
-│   └── scaffold.py               # 生成引擎（只调适配器四件，不含任何 target 分支与具体路径）
+│   ├── adapter.py                # 适配器四件套加载（缺件即非零退出）
+│   ├── library.py                # 正典、种子、graph.db 读写（路径全由调用方传入）
+│   ├── render.py                 # 小模板引擎（{{name}} / {{#each}} / {{#if}}）
+│   ├── scaffold.py               # 生成引擎（只调适配器四件，不含任何 target 分支与具体路径）
+│   ├── validate.py               # 三道机检：check.py + run.sh + graph init/topo
+│   ├── feedback.py               # 上线反馈环（unmatched / weak）
+│   └── migrate_seeds.py          # SEED 内联 → data/graph-seeds.py 一次性迁移
 ├── targets/high-school-ai-tutor/
 │   ├── target.yaml               # repo 地址、ref、全部路径映射
 │   ├── templates/                # 整章图/学习页/正典行模板（classDef、边标签、七槽逐字对齐 ch1 样例）
@@ -29,8 +35,10 @@ Obsidian ┘                                                        （pipeline 
 ├── validate.sh                   # 对钉住的 ref 跑对方自带 check.py + run.sh + graph 校验
 ├── .github/workflows/drift.yml   # 每周漂移检测（见纪律 6）
 ├── work/
-│   ├── raw/                      # PDF 切片、Obsidian 摘录 —— .gitignore
-│   └── chapters/                 # chapter.yaml —— 版本化，唯一真相源
+│   ├── raw/                      # <科目>/<书>/ 切片摘录 + <科目>/extensions/ 外部资料 —— .gitignore
+│   │                             #   （extensions 下转述分析 JSON 例外强制入库，见纪律 5）
+│   ├── chapters/                 # <科目>/ chapter.yaml —— 版本化，唯一真相源
+│   └── snippets/                 # SKILL.md 指针 snippet —— .gitignore，打印后人工贴入
 └── README.md                     # 本文
 
 high-school-ai-tutor-skill/       # 公开 repo，本方案涉及的一次性变更：
@@ -50,7 +58,7 @@ high-school-ai-tutor-skill/       # 公开 repo，本方案涉及的一次性变
 
 **纪律 4 · 生成物清单 + 行为级禁令。** 生成物 = 正典追加区、整章图、学习页、graph-seeds、graph.db；人写物 = SKILL.md 两行指针（人工贴入）与 pipeline 侧一切。正典是**混合文件**：策展区（如 ch1 的 14 行）人写、追加区生成；scaffold 对正典**只查重追加、永不重写既有行**；一切内容修改回 yaml → 重生成，high repo 侧禁止手改生成物——否则下次重生成会静默覆盖手改。
 
-**纪律 5 · work/ 拆分 + 科目分层。** `raw/<科目>/<书>/`（切片、摘录，gitignore，敏感物不出私有侧）与 `chapters/<科目>/`（真相源，必须版本化）分开；scaffold --all 递归读取全部科目；新增一科时在两个目录下建该科目子目录即可，工具与 target 无需改动（target 是全科 tutor，canon 文件由每份 yaml 的 canon_file 字段指向）。ignore 整个 `work/` 会让真相源丢失历史。
+**纪律 5 · work/ 拆分 + 科目分层。** `raw/<科目>/<书>/`（切片、摘录，gitignore，敏感物不出私有侧）与 `chapters/<科目>/`（真相源，必须版本化）分开；scaffold --all 递归读取全部科目；新增一科时在两个目录下建该科目子目录即可，工具与 target 无需改动（target 是全科 tutor，canon 文件由每份 yaml 的 canon_file 字段指向）。ignore 整个 `work/` 会让真相源丢失历史。外部资料（真题点评、月考模拟、延伸书）放 `raw/<科目>/extensions/<类别>/`：docx/PDF 原件留在忽略区，从中提取的**转述分析 JSON**（如 `2026北京卷-考点提取.json`、`人大附模拟卷-考点提取.json`）用 `git add -f` 强制入库——`.gitignore` 对 `work/raw/**` 的整体忽略不变，"转述可入库、原件必留私有"由添加动作保证，不由 ignore 规则表达。
 
 **纪律 6 · CI 首轮必做，且先自验证。** 每周定时：推进 ref → 基线机检 → demo 重生成 → 文本 `git diff --exit-code`。workflow 先写、先空跑（stub target），验证三件事：能推进 ref、能跑 validate、diff 非空能红灯——不等第二章才首跑。
 
@@ -171,5 +179,5 @@ python3 scripts/drift_check.py --target high-school-ai-tutor
 4. 问题模糊：先对齐到课标条目或教材某节，讲清"这个问题的准确范围"再作答。
 5. 超纲内容：可用大学/竞赛教材讲解，深度以回答问题为限，并明示"这超纲了"。
    引用分两档：书未入库时只报书名+版次+章节，页码标"待核对"，禁止凭记忆编页码；
-   书的电子版放入 `work/raw/extension/<书名>/` 并经 extract.py 建索引后，页码引用才可落死。
+   书的电子版放入 `work/raw/<科目>/extensions/<书名>/` 并经 extract.py 建索引后，页码引用才可落死。
 6. 真相源永远是 yaml + 教材 + 课标 + 已入库的延伸书，不因任何一方口头说法单方面更新。
