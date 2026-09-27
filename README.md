@@ -66,7 +66,7 @@ high-school-ai-tutor-skill/       # 公开 repo，本方案涉及的一次性变
 
 1. 建 pipeline repo：README（本文）→ core + 适配层 → CI 空跑。
 2. high repo：`python3 tests/check.py` + `bash tests/run.sh` 基线全绿 → SEED 数据文件化重构 → 复跑同绿。
-3. `pip3 install -r requirements.txt`（有 PyMuPDF 时提取优先用它，否则用 pypdf）。
+3. `pip3 install -r requirements.txt`（有 PyMuPDF 时提取优先用它，否则用 pypdf）。Python 是 uv/PEP 668 管的时先进 `python3 -m venv .venv` 再装；扫描书 OCR 另需 `pymupdf`、`pillow`、`ocrmac`（仅 macOS）。
 
 ## 4. 单章流水线（七步）
 
@@ -158,6 +158,7 @@ python3 scripts/ci_dry_run.py                   # 只跑空跑
 
 python3 core/migrate_seeds.py --repo <high repo 检出> [--apply]
 python3 core/extract.py 教材.pdf --out work/raw/chem-bx1
+python3 scripts/ocr_fill.py work/raw/<科目>/extensions/<书名>   # 无文本层扫描书全书 OCR，按人工核对的 toc.txt 切章（macOS Vision）
 python3 core/find_notes.py --vault ~/库路径 --query 钠
 python3 core/scaffold.py work/chapters/<id>.yaml --repo <high repo 检出> [--apply]
 python3 core/scaffold.py --all --repo <high repo 检出> --apply
