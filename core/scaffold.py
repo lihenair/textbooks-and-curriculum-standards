@@ -361,7 +361,7 @@ def _init_db(artifacts: dict) -> int:
 def _chapters(root: Path, chapter: Path | None, all_chapters: bool) -> list[Path]:
     if all_chapters:
         directory = root / "work" / "chapters"
-        return sorted(path for path in directory.glob("*.yaml") if path.is_file())
+        return sorted(path for path in directory.rglob("*.yaml") if path.is_file())
     assert chapter is not None
     return [chapter]
 
