@@ -15,6 +15,18 @@ NODE_TYPES = ("concept", "skill", "experiment")
 TYPE_ZH = {"concept": "概念", "skill": "技能", "experiment": "实验"}
 _NODE_ID = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 _CHAPTER_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_-]*$")
+# 与 high repo scripts/canon_sync.py 的 SUBJECT_PREFIX 一致。
+SUBJECT_PREFIX = {
+    "数学": "math",
+    "物理": "phy",
+    "化学": "chem",
+    "生物": "bio",
+    "语文": "chinese",
+    "英语": "english",
+    "历史": "history",
+    "政治": "politics",
+    "地理": "geography",
+}
 _NODE_KEYS = {
     "id",
     "display",
@@ -164,6 +176,12 @@ def validate_data(data: dict) -> list[Violation]:
             problems.append(Violation(key, "路径不能越出仓库"))
     if not _CHAPTER_ID.match(str(data["chapter_id"])):
         problems.append(Violation("chapter_id", "只能用英文、数字、下划线和连字符"))
+    prefix = SUBJECT_PREFIX.get(str(data.get("subject") or ""))
+    chapter_id = str(data.get("chapter_id") or "")
+    if prefix and not chapter_id.startswith(prefix + "-"):
+        problems.append(
+            Violation("chapter_id", f"须带学科前缀 {prefix}-，与学习页目录和正典章号一致")
+        )
 
     nodes: list[Node] = []
     seen: set[str] = set()

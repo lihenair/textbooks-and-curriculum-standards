@@ -134,6 +134,7 @@ def render_canon_block(chapter: Chapter, line_template: str, render) -> str:
 
 
 def merge_canon(existing: str, chapter_id: str, block: str) -> str:
+    """已有 pipeline 块原地替换，新章才追加到文末。"""
     lines = existing.splitlines()
     begin = end = None
     for index, line in enumerate(lines):
@@ -144,17 +145,19 @@ def merge_canon(existing: str, chapter_id: str, block: str) -> str:
         if begin is not None and matched_end and matched_end.group(1) == chapter_id:
             end = index
             break
+    block_lines = block.strip("\n").split("\n") if block.strip("\n") else []
     if begin is not None and end is not None:
-        lines = lines[:begin] + lines[end + 1 :]
-    text = "\n".join(lines).rstrip("\n")
-    if text:
-        text += "\n"
-    block = block.strip("\n")
-    if not block:
-        return text if text.endswith("\n") or not text else text + "\n"
-    if text and not text.endswith("\n\n"):
-        text += "\n"
-    return text + block + "\n"
+        merged = lines[:begin] + block_lines + lines[end + 1 :]
+        text = "\n".join(merged).rstrip("\n")
+        return (text + "\n") if text else ""
+    kept = "\n".join(lines).rstrip("\n")
+    if kept:
+        kept += "\n"
+    if not block_lines:
+        return kept
+    if kept and not kept.endswith("\n\n"):
+        kept += "\n"
+    return kept + "\n".join(block_lines) + "\n"
 
 
 def canon_conflicts(chapter: Chapter, canon_path: Path, line_template: str, render) -> list[Violation]:
@@ -347,29 +350,123 @@ def merge_seeds(existing: Seeds, chapters: list[Chapter]) -> tuple[Seeds, list[V
         if created:
             owned_later[chapter.chapter_id] = tuple(created)
         formal_ids.update(node.id for node in chapter.nodes)
-    drop_edge_src = old_formal | formal_ids
-    base_edges = [edge for edge in existing.edges if edge.src not in drop_edge_src]
-    seen = {(edge.src, edge.dst, edge.kind) for edge in base_edges}
-    new_edges: list[SeedEdge] = []
+    formal_by_chapter: dict[str, list[SeedNode]] = {}
+    grey_new: list[SeedNode] = []
+    for node in new_nodes:
+        if node.grey:
+            grey_new.append(node)
+        else:
+            formal_by_chapter.setdefault(node.chapter_id, []).append(node)
     known_ids = {node.id for node in base_nodes} | {node.id for node in new_nodes}
+    edges_by_chapter: dict[str, list[SeedEdge]] = {}
+    seen_edges = {
+        (edge.src, edge.dst, edge.kind)
+        for edge in existing.edges
+        if edge.src not in old_formal and edge.src not in formal_ids
+    }
     for chapter in chapters:
         for edge in (*chapter.edges, *chapter.combo):
-            if edge.external and (edge.src not in known_ids or edge.dst not in known_ids):
-                missing = edge.src if edge.src not in known_ids else edge.dst
-                problems.append(Violation(edge.path, f"端点不存在：{missing}"))
-                continue
             if edge.src not in known_ids or edge.dst not in known_ids:
                 missing = edge.src if edge.src not in known_ids else edge.dst
                 problems.append(Violation(edge.path, f"端点不存在：{missing}"))
                 continue
             key = (edge.src, edge.dst, edge.kind)
-            if key in seen:
+            if key in seen_edges:
                 continue
-            seen.add(key)
-            new_edges.append(SeedEdge(*key))
+            seen_edges.add(key)
+            edges_by_chapter.setdefault(chapter.chapter_id, []).append(SeedEdge(*key))
     if problems:
-        return Seeds(base_nodes, base_edges, owned_later), problems
-    return Seeds(base_nodes + new_nodes, base_edges + new_edges, owned_later), []
+        return Seeds(base_nodes, [], owned_later), problems
+    nodes = _place_rebuilt(
+        existing.nodes,
+        formal_by_chapter,
+        grey_new,
+        rebuilding,
+        drop_ids,
+    )
+    edges = _place_edges(existing, formal_by_chapter, edges_by_chapter, rebuilding)
+    return Seeds(nodes, edges, owned_later), []
+
+
+def _node_key(node: SeedNode) -> tuple:
+    return (node.id, node.subject, node.display, node.chapter_id, node.grey)
+
+
+def _edge_key(edge: SeedEdge) -> tuple:
+    return (edge.src, edge.dst, edge.kind)
+
+
+def _place_rebuilt(existing_nodes, formal_by_chapter, grey_new, rebuilding, drop_ids) -> list[SeedNode]:
+    """内容没变的章留在原位置；有变化时只替换该章那一组。"""
+    stable = {
+        chapter_id
+        for chapter_id in rebuilding
+        if _same_nodes(
+            [node for node in existing_nodes if node.chapter_id == chapter_id and not node.grey],
+            formal_by_chapter.get(chapter_id, []),
+        )
+    }
+    result: list[SeedNode] = []
+    placed: set[str] = set()
+    for node in existing_nodes:
+        if node.chapter_id in stable and not node.grey:
+            result.append(node)
+            continue
+        if node.chapter_id in rebuilding and not node.grey:
+            if node.chapter_id not in placed:
+                result.extend(formal_by_chapter.get(node.chapter_id, []))
+                placed.add(node.chapter_id)
+            continue
+        if node.id in drop_ids:
+            continue
+        result.append(node)
+    for chapter_id, group in formal_by_chapter.items():
+        if chapter_id not in placed and chapter_id not in stable:
+            result.extend(group)
+    result.extend(grey_new)
+    return result
+
+
+def _same_nodes(old: list[SeedNode], new: list[SeedNode]) -> bool:
+    return {_node_key(node) for node in old} == {_node_key(node) for node in new}
+
+
+def _place_edges(existing: Seeds, formal_by_chapter, edges_by_chapter, rebuilding) -> list[SeedEdge]:
+    owners = _edge_owners(existing, formal_by_chapter, rebuilding)
+    stable = set()
+    for chapter_id in rebuilding:
+        old = [edge for edge in existing.edges if owners.get(edge.src) == chapter_id]
+        new = edges_by_chapter.get(chapter_id, [])
+        if {_edge_key(edge) for edge in old} == {_edge_key(edge) for edge in new}:
+            stable.add(chapter_id)
+    result: list[SeedEdge] = []
+    placed: set[str] = set()
+    for edge in existing.edges:
+        owner = owners.get(edge.src)
+        if owner in stable:
+            result.append(edge)
+            continue
+        if owner in rebuilding:
+            if owner not in placed:
+                result.extend(edges_by_chapter.get(owner, []))
+                placed.add(owner)
+            continue
+        result.append(edge)
+    for chapter_id, group in edges_by_chapter.items():
+        if chapter_id not in placed and chapter_id not in stable:
+            result.extend(group)
+    return result
+
+
+def _edge_owners(existing: Seeds, formal_by_chapter, rebuilding) -> dict[str, str]:
+    owners: dict[str, str] = {}
+    for node in existing.nodes:
+        if node.chapter_id in rebuilding and not node.grey:
+            owners[node.id] = node.chapter_id
+    for chapter_id, group in formal_by_chapter.items():
+        for node in group:
+            owners[node.id] = chapter_id
+    return owners
 
 
 def dump_db(path: Path) -> str:

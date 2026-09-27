@@ -48,6 +48,13 @@ class IrTests(unittest.TestCase):
         messages = "；".join(str(item) for item in validate_data(data))
         self.assertIn("未知字段", messages)
 
+    def test_biology_chapter_id_needs_subject_prefix(self):
+        data = _data()
+        data["subject"] = "生物"
+        data["chapter_id"] = "xbx1-ch1"
+        messages = "；".join(str(item) for item in validate_data(data))
+        self.assertIn("bio-", messages)
+
 
 if __name__ == "__main__":
     unittest.main()
