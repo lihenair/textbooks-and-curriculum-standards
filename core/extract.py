@@ -14,6 +14,20 @@ from pathlib import Path
 
 CHAPTER_RE = re.compile(r"^第\s*([0-9一二三四五六七八九十百零〇两]+)\s*章([^\n]*)")
 
+# 目录点线：三个以上句点（中间可夹空格，兼容 ". . . ." 与 "..."）、全角句点串或省略号
+LEADER_RE = re.compile(r"(?:\.\s*){4,}|(?:．\s*){4,}|……")
+
+
+def _is_toc_leader(line: str) -> bool:
+    """目录条目行：带点线且行尾是页码。正文引语里的省略号不以页码结尾，不会命中。"""
+    return bool(LEADER_RE.search(line)) and bool(re.search(r"\d+\s*$", line))
+
+
+def _empty_run_note(start: int, end: int) -> str:
+    if start == end:
+        return f"第 {start} 页\t（无文本，需人工补页码）"
+    return f"第 {start}-{end} 页\t（无文本，需人工补页码，共 {end - start + 1} 页）"
+
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="抽出 PDF 正文并按章切开")
@@ -84,15 +98,31 @@ def write_extract(out: Path, pages: list[str]) -> None:
     current_numeral = ""
     current_start = 1
     current_lines: list[str] = []
+    empty_run_start: int | None = None
     for index, text in enumerate(pages, 1):
         body = text.replace("\x00", "").strip()
         page_path = page_dir / f"p{index:03d}.txt"
         if body:
             page_path.write_text(f"第 {index} 页\n\n{body}\n", encoding="utf-8")
+            if empty_run_start is not None:
+                toc.append(_empty_run_note(empty_run_start, index - 1))
+                empty_run_start = None
         else:
             page_path.write_text(f"第 {index} 页\n\n（无文本，需人工补页码）\n", encoding="utf-8")
-            toc.append(f"第 {index} 页\t（无文本，需人工补页码）")
-        for line in body.splitlines():
+            if empty_run_start is None:
+                empty_run_start = index
+            continue
+        lines = body.splitlines()
+        headings = [line.strip() for line in lines if CHAPTER_RE.match(line.strip())]
+        leader_count = sum(1 for line in lines if _is_toc_leader(line.strip()))
+        if leader_count >= 3 or len({CHAPTER_RE.match(h).group(1) for h in headings}) >= 2:
+            # 目录页（点线密集）或章目汇总页（同页多个不同章号）：
+            # 本页的章标题全是目录条目，不当章首页；正文照常归入当前章。
+            if current_title:
+                current_lines.extend(lines)
+                current_lines.append("")
+            continue
+        for line in lines:
             heading = CHAPTER_RE.match(line.strip())
             if not heading:
                 if current_title:
@@ -118,8 +148,10 @@ def write_extract(out: Path, pages: list[str]) -> None:
             current_start = index
             current_lines = [line]
             toc.append(f"第 {index} 页\t{current_title}")
-        if current_title and body and not any(CHAPTER_RE.match(line.strip()) for line in body.splitlines()):
+        if current_title and not headings:
             current_lines.append("")
+    if empty_run_start is not None:
+        toc.append(_empty_run_note(empty_run_start, len(pages)))
     if current_title:
         chapters.append((current_title, current_start, current_lines))
     if not chapters and pages:
