@@ -15,7 +15,7 @@ flowchart TD
 {{/each}}  end
 {{#each later}}  {{id}}["{{display}}"]:::later
 {{/each}}{{#each solid_edges}}  {{src}} -->|{{kind}}| {{dst}}
-{{/each}}{{#each combo_edges}}  {{src}} -.->|{{kind}}| {{dst}}
+{{/each}}{{#each combo_edges}}  {{src}} -.->|{{kind}}| {{#if dst_cross}}{{dst}}["{{dst_label}}"]:::later{{/if}}{{#if dst_in_chapter}}{{dst}}{{/if}}
 {{/each}}```
 
 图例：蓝=概念，绿=技能，橙=实验，灰=后续章节。实线=直接前置或同章衔接，虚线=常考组合。

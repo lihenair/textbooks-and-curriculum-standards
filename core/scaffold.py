@@ -145,7 +145,7 @@ def _render_chapters(adapter, repo, chapters, seeds: Seeds, pipeline_root: Path)
         if emitting:
             block = _canon_block(adapter, chapter, emitting)
         canon_text = merge_canon(existing, chapter.chapter_id, block)
-        graph_text = render(adapter.templates["chapter-graph.md"], _graph_context(chapter))
+        graph_text = render(adapter.templates["chapter-graph.md"], _graph_context(chapter, {n.id: n.display for n in seeds.nodes}))
         pages = {}
         for node in chapter.nodes:
             pages[node.id] = render(adapter.templates["study-page.md"], _page_context(node))
@@ -223,7 +223,7 @@ def _canon_block(adapter, chapter: Chapter, nodes) -> str:
     return render_canon_block(partial, adapter.templates["canon-line.txt"], render)
 
 
-def _graph_context(chapter: Chapter) -> dict:
+def _graph_context(chapter: Chapter, display: dict) -> dict:
     sections = []
     for section in chapter.sections:
         sections.append({
@@ -245,7 +245,10 @@ def _graph_context(chapter: Chapter) -> dict:
         "sections": sections,
         "later": [{"id": item.id, "display": item.display} for item in chapter.later],
         "solid_edges": [{"src": edge.src, "dst": edge.dst, "kind": edge.kind} for edge in chapter.edges],
-        "combo_edges": [{"src": edge.src, "dst": edge.dst, "kind": edge.kind} for edge in chapter.combo],
+        "combo_edges": [dict(src=edge.src, dst=edge.dst, kind=edge.kind,
+                             **({"dst_cross": True, "dst_label": display.get(edge.dst, edge.dst)}
+                                if edge.dst not in {n.id for n in chapter.nodes}
+                                else {"dst_in_chapter": True})) for edge in chapter.combo],
         "has_later": bool(chapter.later),
     }
 
